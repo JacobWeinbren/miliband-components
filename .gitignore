@@ -1,0 +1,11 @@
+## System Files
+.DS_Store
+
+## Yarn
+yarn.lock
+/node_modules/
+yarn-error.log
+
+## Output
+/dist/
+/storybook-static/

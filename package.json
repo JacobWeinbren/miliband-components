@@ -1,0 +1,37 @@
+{
+  "name": "miliband-components",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "rollup -c",
+    "watch": "rollup -c -w",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook -s ./stories/assets"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JacobWeinbren/miliband-components.git"
+  },
+  "keywords": [
+    "custom-components",
+    "storybook"
+  ],
+  "author": "Jacob",
+  "license": "MIT",
+  "devDependencies": {
+    "@storybook/addon-actions": "^6.3.6",
+    "@storybook/addon-essentials": "^6.3.6",
+    "@storybook/addon-links": "^6.3.6",
+    "@storybook/html": "^6.3.6"
+  },
+  "dependencies": {
+    "@rollup/plugin-commonjs": "^20.0.0",
+    "@rollup/plugin-node-resolve": "^13.0.4",
+    "@rollup/plugin-typescript": "^8.2.5",
+    "lit": "^2.0.0-rc.2",
+    "rollup": "^2.56.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "typescript": "^4.3.5"
+  }
+}
