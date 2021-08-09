@@ -1,24 +1,27 @@
-import { Link, ClipboardCode } from '@storybook/design-system';
+import { Link, ClipboardCode, PlaceholderBlock } from '@storybook/design-system';
 
 import Cover from './assets/cover.png';
 
 <Meta title="Introduction" />
 
-<div style={{ padding: '0 0 10px 0'}}>
 <img alt="Social Review Parody Logo" src={Cover} />
-</div>
+<PlaceholderBlock  />
 
-<div style={{width: '700px'}}>
+<div style={{width: '500px'}}>
 # Miliband-Components
 
-Miliband Components are components which build up a broader page. These are designed to be used for the Miliband Theme. This project was made for [The Social Review](https://www.thesocialreview.co.uk/)
+Miliband Components are components which build up a broader page. These are designed to be used for the Miliband Theme. This project was made for <Link href="https://www.thesocialreview.co.uk/">The Social Review</Link>
 
-## Build
-Clone the <Link href="https://github.com/JacobWeinbren/miliband-components">repo</Link>, cd into the directory, then run `yarn install && yarn run build`
+## Install
+Clone the <Link href="https://github.com/JacobWeinbren/miliband-components">repo</Link>.
 
-For the storybook, run `yarn run storybook`.
+Then run
+<ClipboardCode code="yarn && yarn run build"/>
 
-## Further
+For the storybook, run 
+<ClipboardCode code="yarn run storybook"/>.
+
+## Resources
 
 You can find out more details on the [Github Repo](https://github.com/JacobWeinbren/miliband-components)
 </div>
