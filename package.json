@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "esbuild build.js",
-    "dev": "esbuild build.js --watch",
+    "build": "DEBUG=FALSE node build.js",
+    "dev": "DEBUG=TRUE node build.js",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -o docs -s ./stories/assets"
   },
