@@ -15,4 +15,4 @@ For the storybook, run ```yarn run storybook```.
 Supports major browsers - Chrome, Firefox, Safari, Edge and Opera. Make sure to use [polyfills](https://babeljs.io/docs/en/babel-polyfill) for older browsers - read [lit.dev's guide](https://lit.dev/docs/tools/production/) for more details on legacy browser support.
 
 ## License
-Uses the MIT License, [summarised here](https://tldrlegal.com/license/mit-license).
+Miliband uses the MIT License, [summarised here](https://tldrlegal.com/license/mit-license).
