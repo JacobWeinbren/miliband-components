@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "node build.js --watch",
+    "build": "esbuild build.js",
+    "dev": "esbuild build.js --watch",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook -s ./stories/assets"
+    "build-storybook": "build-storybook -o docs -s ./stories/assets"
   },
   "repository": {
     "type": "git",
