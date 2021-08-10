@@ -1,9 +1,6 @@
 #https://dev.to/kouts/deploy-storybook-to-github-pages-3bij
 name: Build and Deploy
-on:
-  push:
-    branches:
-      - main
+on: ['push', 'workflow_dispatch]
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
