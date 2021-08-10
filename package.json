@@ -35,7 +35,6 @@
     "@storybook/addon-docs": "^6.3.7",
     "@storybook/addon-knobs": "^6.3.0",
     "@storybook/addon-viewport": "^6.3.7",
-    "copy-webpack-plugin": "6",
     "esbuild": "^0.12.19",
     "esbuild-plugin-sass": "^0.6.0",
     "esbuild-sass-plugin": "^1.4.11",
