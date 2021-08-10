@@ -2,6 +2,7 @@ const esbuild = require('esbuild')
 const path = require("path");
 const sassPlugin = require('esbuild-sass-plugin').sassPlugin;
 
+//On Watch
 if (watch == true) {
     var watch = {
         onRebuild(error, result) {
@@ -13,6 +14,7 @@ if (watch == true) {
     var watch = false;
 }
 
+//Builds theme, index and components
 esbuild.build({
     entryPoints: {
         'styles/theme': 'src/styles/theme.scss',
