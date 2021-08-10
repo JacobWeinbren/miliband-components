@@ -1,5 +1,5 @@
 #https://dev.to/kouts/deploy-storybook-to-github-pages-3bij
-name: Build and Deploy
+name: Storybook Deploy
 on: [push, workflow_dispatch]
 jobs:
   build-and-deploy:
