@@ -1,2 +1,2 @@
-import './styles/theme.scss'
+//import './styles/theme.scss'
 export * from './components/mili-button';
