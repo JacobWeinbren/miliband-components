@@ -15,9 +15,9 @@ if (watch == true) {
 
 esbuild.build({
     entryPoints: {
-        'theme': 'src/styles/theme.scss',
+        'styles/theme': 'src/styles/theme.scss',
         'index': 'src/index.ts',
-        'mili-button': 'src/components/mili-button.ts',
+        'components/mili-button': 'src/components/mili-button.ts',
     },
     format: 'esm',
     outdir: 'dist',

@@ -1,6 +1,8 @@
 import typescript from '@rollup/plugin-typescript';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
+import scss from 'rollup-plugin-scss'
+import copy from 'rollup-plugin-copy';
 import { terser } from "rollup-plugin-terser";
 
 const production = !process.env.ROLLUP_WATCH;
@@ -16,6 +18,15 @@ export default [{
         typescript(),
         resolve(),
         commonjs(),
+        scss({
+            output: "dist/styles/theme.css"
+        }),
+        copy({
+            targets: [{
+                src: 'src/assets',
+                dest: 'dist'
+            }]
+        }),
         production && terser()
     ],
     output: [{

@@ -1,7 +1,7 @@
-import '../dist/mili-button';
+import '../../dist/mili-button';
 
 export default {
-    title: "Components / Button",
+    title: "Components/Button",
     argTypes: { clickHandler: { action: "Clicked the button!" } },
 };
 

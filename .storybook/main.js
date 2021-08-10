@@ -4,14 +4,12 @@ module.exports = {
         "../stories/**/*.stories.@(js|jsx|ts|tsx)"
     ],
     addons: [
-        "@storybook/addon-links",
-        "@storybook/addon-essentials",
-        "@storybook/addon-a11y",
-        {
-            name: "@storybook/addon-storysource",
-            loaderOptions: {
-                prettierConfig: { printWidth: 80, singleQuote: false },
-            }
-        },
+        '@storybook/addon-knobs',
+        '@storybook/addon-actions',
+        '@storybook/addon-docs',
+        '@storybook/addon-links',
+        '@storybook/addon-a11y',
+        '@storybook/addon-storysource',
+        '@storybook/addon-viewport'
     ],
 }
