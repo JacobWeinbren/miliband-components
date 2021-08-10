@@ -8,7 +8,7 @@ const production = !process.env.ROLLUP_WATCH;
 export default [{
     input: {
         'index': 'src/index.ts',
-        'mili-button': 'src/mili-button.ts',
+        'components/mili-button': 'src/components/mili-button.ts',
     },
     treeshake: production,
     preserveEntrySignatures: false,

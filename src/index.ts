@@ -1,1 +1,1 @@
-export * from './mili-button';
+export * from './components/mili-button';

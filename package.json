@@ -30,6 +30,7 @@
     "@rollup/plugin-node-resolve": "^13.0.4",
     "@rollup/plugin-typescript": "^8.2.5",
     "esbuild": "^0.12.19",
+    "esbuild-plugin-sass": "^0.6.0",
     "esbuild-sass-plugin": "^1.4.11",
     "lit": "^2.0.0-rc.2",
     "path": "^0.12.7",
