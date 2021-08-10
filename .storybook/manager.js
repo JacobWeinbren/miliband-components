@@ -1,6 +1,6 @@
 import { addons } from '@storybook/addons';
-import YourTheme from './YourTheme';
+import theme from './theme';
 
 addons.setConfig({
-    theme: YourTheme,
+    theme: theme,
 });
