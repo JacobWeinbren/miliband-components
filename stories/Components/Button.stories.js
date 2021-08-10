@@ -1,4 +1,4 @@
-import '../../dist/mili-button';
+import '../../dist/components/mili-button';
 
 export default {
     title: "Components/Button",
