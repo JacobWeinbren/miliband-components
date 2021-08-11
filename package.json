@@ -4,11 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "prebuild": "rimraf dist",
     "build": "DEBUG=TRUE node build.js",
     "dev": "DEBUG=TRUE node build.js",
     "storybook": "start-storybook -p 6006 -s ./stories/assets,./src/assets",
-    "prestorybook:build": "rimraf docs",
     "storybook:build": "build-storybook -o docs -s ./stories/assets,./src/assets"
   },
   "repository": {
