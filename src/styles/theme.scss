@@ -1,6 +1,7 @@
-@import "_font.scss";
+@use "font";
+@use "variables";
 
-$font-name: 'Libre Franklin';
+$font-name: "Libre Franklin";
 
 body {
     font-family: $font-name;

@@ -1,19 +1,24 @@
 /* libre-franklin-regular - latin */
 @font-face {
-    font-family: 'Libre Franklin';
+    font-family: "Libre Franklin";
     font-style: normal;
     font-weight: 400;
-    src: url('../assets/fonts/libre-franklin-v7-latin/libre-franklin-v7-latin-regular.eot');
+    src: url("../assets/fonts/libre-franklin-v7-latin/libre-franklin-v7-latin-regular.eot");
     /* IE9 Compat Modes */
-    src: local(''),
-        url('../assets/fonts/libre-franklin-v7-latin/libre-franklin-v7-latin-regular.eot?#iefix') format('embedded-opentype'),
+    src: local(""),
+        url("../assets/fonts/libre-franklin-v7-latin/libre-franklin-v7-latin-regular.eot?#iefix")
+            format("embedded-opentype"),
         /* IE6-IE8 */
-        url('../assets/fonts/libre-franklin-v7-latin/libre-franklin-v7-latin-regular.woff2') format('woff2'),
+            url("../assets/fonts/libre-franklin-v7-latin/libre-franklin-v7-latin-regular.woff2")
+            format("woff2"),
         /* Super Modern Browsers */
-        url('../assets/fonts/libre-franklin-v7-latin/libre-franklin-v7-latin-regular.woff') format('woff'),
+            url("../assets/fonts/libre-franklin-v7-latin/libre-franklin-v7-latin-regular.woff")
+            format("woff"),
         /* Modern Browsers */
-        url('../assets/fonts/libre-franklin-v7-latin/libre-franklin-v7-latin-regular.ttf') format('truetype'),
+            url("../assets/fonts/libre-franklin-v7-latin/libre-franklin-v7-latin-regular.ttf")
+            format("truetype"),
         /* Safari, Android, iOS */
-        url('../assets/fonts/libre-franklin-v7-latin/libre-franklin-v7-latin-regular.svg#LibreFranklin') format('svg');
+            url("../assets/fonts/libre-franklin-v7-latin/libre-franklin-v7-latin-regular.svg#LibreFranklin")
+            format("svg");
     /* Legacy iOS */
 }

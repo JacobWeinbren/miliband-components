@@ -1,9 +1,16 @@
 export const parameters = {
     actions: { argTypesRegex: "^on[A-Z].*" },
-    viewMode: 'docs',
+    viewMode: "docs",
+    docs: {
+        inlineStories: false,
+    },
     options: {
         storySort: {
-            order: ['Getting Started', ['Introduction', 'Install'], 'Components'],
+            order: [
+                "Getting Started",
+                ["Introduction", "Install"],
+                "Components",
+            ],
         },
     },
-}
+};
