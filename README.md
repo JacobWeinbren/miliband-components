@@ -1,6 +1,5 @@
 # miliband-components
-
-Component Library for Miliband Theme.
+> Component Library for Miliband Theme.
 
 ## Build
 
