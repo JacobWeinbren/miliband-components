@@ -1,7 +1,12 @@
-@import "~@aotearoan/sass-farbig";
-
 $font-name: "Libre Franklin";
 $text: "black";
 $inverse: "white";
-$primary: "#F04C53";
-$secondary: "#0A0808";
+$primary: #f04c53;
+
+//https://paletton.com/#uid=75B0u0klSuEccLvhAAUqPsrtami
+$secondary: #30968f;
+
+//Greys
+//@import "~@aotearoan/sass-farbig";
+$grey: #525252; //map-get(neutral-palette(), d2)
+$grey-border: #c6c6c6; //map-get(high-contrast-palette(), l1)

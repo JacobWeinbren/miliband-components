@@ -29,8 +29,7 @@ esbuild
         sourcemap: "external",
         plugins: [
             sassPlugin({
-                type: "style",
-                includePaths: [path.resolve(__dirname, "node_modules")],
+                quietDeps: true,
             }),
         ],
         loader: {
