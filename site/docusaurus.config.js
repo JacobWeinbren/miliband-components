@@ -2,13 +2,14 @@
 module.exports = {
   title: 'Miliband Components',
   tagline: 'A Component Library built for The Social Review',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://jacobweinbren.github.io/miliband-components/', // Your website URL
   baseUrl: '/',
+  trailingSlash: false,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'The Social Review',
-  projectName: 'miliband-compoenents',
+  organizationName: 'JacobWeinbren',
+  projectName: 'miliband-components',
   themeConfig: {
     colorMode: {
       disableSwitch: true
