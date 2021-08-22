@@ -107,7 +107,7 @@ module.exports = {
             'https://github.com/JacobWeinbren/miliband-components/tree/main/site',
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: [require.resolve('./src/css/custom.css'), require.resolve('../dist/styles/theme.css')],
         },
       },
     ],
