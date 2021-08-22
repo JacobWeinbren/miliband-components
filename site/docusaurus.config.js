@@ -3,7 +3,7 @@ module.exports = {
   title: 'Miliband Components',
   tagline: 'A Component Library built for The Social Review',
   url: 'https://jacobweinbren.github.io/', // Your website URL
-  baseUrl: '/',
+  baseUrl: '/miliband-components/',
   trailingSlash: false,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
