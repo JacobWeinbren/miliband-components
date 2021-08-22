@@ -2,13 +2,21 @@
 .DS_Store
 
 ## Yarn
+/node_modules
+/site/node_modules
 yarn.lock
-/node_modules/
-yarn-error.log
+yarn-debug.log*
+yarn-error.log*
 
 ## Output
-/dist/
-/docs/
+/dist
+/docs
+/site/build
+
+# Generated files
+.docusaurus
+.cache-loader
 
 ## Misc
 cover.afphoto
+

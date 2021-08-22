@@ -19,14 +19,16 @@
     "custom-components",
     "storybook"
   ],
+  "prettier": {
+    "trailingComma": "es5",
+    "tabWidth": 4,
+    "semi": true,
+    "singleQuote": false
+  },
   "author": "Jacob",
   "license": "MIT",
   "devDependencies": {
     "@es-pack/esbuild-sass-plugin": "^1.0.4",
-    "@storybook/addon-actions": "^6.3.6",
-    "@storybook/addon-links": "^6.3.6",
-    "@storybook/addon-storysource": "^6.3.7",
-    "@storybook/html": "^6.3.6",
     "esbuild-plugin-postcss2": "^0.0.9",
     "sass": "^1.37.5"
   },
@@ -35,10 +37,6 @@
     "@rollup/plugin-commonjs": "^20.0.0",
     "@rollup/plugin-node-resolve": "^13.0.4",
     "@rollup/plugin-typescript": "^8.2.5",
-    "@storybook/addon-a11y": "^6.3.7",
-    "@storybook/addon-docs": "^6.3.7",
-    "@storybook/addon-knobs": "^6.3.0",
-    "@storybook/addon-viewport": "^6.3.7",
     "autoprefixer": "^10.3.1",
     "css-loader": "^6.2.0",
     "esbuild": "^0.12.19",

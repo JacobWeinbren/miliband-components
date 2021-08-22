@@ -5,7 +5,7 @@
 
 Clone the repo, cd into the directory, then run `yarn install && yarn run build`
 
-For the storybook, run `yarn run storybook`.
+For the docs, `cd site` then `yarn run start`.
 
 ## Production
 
