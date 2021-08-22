@@ -83,11 +83,11 @@ module.exports = {
           items: [
             {
               label: 'Miliband Components',
-              href: 'https://github.com/JacobWeinbren/miliband-components/site',
+              href: 'https://github.com/JacobWeinbren/miliband-components/',
             },
             {
               label: 'Miliband Theme (TBA)',
-              href: 'https://github.com/JacobWeinbren/miliband-components/site',
+              href: 'https://github.com/JacobWeinbren/miliband-components/',
             },
           ],
         }
@@ -103,7 +103,7 @@ module.exports = {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
-            'https://github.com/JacobWeinbren/miliband-components/site',
+            'https://github.com/JacobWeinbren/miliband-components/tree/main/site',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

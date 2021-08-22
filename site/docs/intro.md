@@ -9,9 +9,9 @@ title: Introduction
 
 <br />
 
-**Miliband Components** are components which build up a broader page. These are designed to be used for the Miliband Theme. This project was made for [The Social Review](https://www.thesocialreview.co.uk/). 
+**Miliband Components** is a component library design for the **Miliband Theme**. This project was made for [The Social Review](https://www.thesocialreview.co.uk/). 
 
-Throughout development I have recieved much insight from friends, above is a poster designed that includes them, based on *Reasons To Be Cheerful*, a podcast by Ed Miliband. The favicon and logo are from [Ed Miliband For Leader](https://en.wikipedia.org/wiki/Ed_Miliband).
+Throughout development I have recieved much insight from friends, above is a poster for them, based on *Reasons To Be Cheerful*, a podcast by Ed Miliband. The favicon and logo are from [Ed Miliband For Leader](https://en.wikipedia.org/wiki/Ed_Miliband).
 
 ## Installation
 
