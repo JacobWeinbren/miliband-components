@@ -1,4 +1,5 @@
 module.exports = {
-  tutorialSidebar: ['intro'],
-  apiSidebar: ['components/button'],
+  startSidebar: ['start/intro'],
+  styleSidebar: ['styles/colours'],
+  componentSidebar: ['components/button'],
 };

@@ -11,6 +11,9 @@ module.exports = {
   organizationName: 'JacobWeinbren',
   projectName: 'miliband-components',
   themeConfig: {
+    prism: {
+      theme: require('prism-react-renderer/themes/nightOwlLight'),
+    },
     colorMode: {
       disableSwitch: true
     },
@@ -23,13 +26,13 @@ module.exports = {
     items: [
         {
           type: 'doc',
-          docId: 'intro',
+          docId: 'start/intro',
           position: 'left',
           label: 'Getting Started',
         },
         {
           type: 'doc',
-          docId: 'intro',
+          docId: 'styles/colours',
           position: 'left',
           label: 'Styles',
         },
@@ -54,10 +57,6 @@ module.exports = {
           items: [
             {
               label: 'Miliband Components',
-              to: '/',
-            },
-            {
-              label: 'Miliband Theme (TBA)',
               to: '/',
             },
           ],
@@ -86,10 +85,6 @@ module.exports = {
               label: 'Miliband Components',
               href: 'https://github.com/JacobWeinbren/miliband-components/',
             },
-            {
-              label: 'Miliband Theme (TBA)',
-              href: 'https://github.com/JacobWeinbren/miliband-components/',
-            },
           ],
         }
       ],
@@ -107,7 +102,7 @@ module.exports = {
             'https://github.com/JacobWeinbren/miliband-components/tree/main/site',
         },
         theme: {
-          customCss: [require.resolve('./src/css/custom.css'), require.resolve('../dist/styles/theme.css')],
+          customCss: [require.resolve('../dist/styles/theme.css'), require.resolve('./src/css/custom.css')],
         },
       },
     ],

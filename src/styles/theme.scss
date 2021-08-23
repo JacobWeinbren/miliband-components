@@ -1,4 +1,14 @@
+@use 'sass:meta';
 @use "font";
 @use "variables";
 
-$font-name: "Libre Franklin";
+html {
+  box-sizing: border-box;
+}
+
+:root {
+  --font: #{font.$font};
+  @each $name, $value in meta.module-variables(variables) {
+    --#{$name}: #{$value};
+  }
+}
