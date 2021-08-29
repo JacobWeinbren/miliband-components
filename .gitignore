@@ -10,12 +10,6 @@ yarn-error.log*
 
 ## Output
 /dist
-/docs
-/site/build
-
-# Generated files
-.docusaurus
-.cache-loader
 
 ## Misc
 cover.afphoto
