@@ -3,12 +3,12 @@
 @use "variables";
 
 html {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 :root {
-  --font: #{font.$font};
-  @each $name, $value in meta.module-variables(variables) {
-    --#{$name}: #{$value};
-  }
+    --font: #{font.$font};
+    @each $name, $value in meta.module-variables(variables) {
+        --#{$name}: #{$value};
+    }
 }

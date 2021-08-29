@@ -1,59 +1,60 @@
 {
-  "name": "miliband-components",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "build": "DEBUG=FALSE node build.js",
-    "dev": "DEBUG=TRUE node build.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/JacobWeinbren/miliband-components.git"
-  },
-  "keywords": [
-    "custom-components",
-    "storybook"
-  ],
-  "prettier": {
-    "trailingComma": "es5",
-    "tabWidth": 4,
-    "semi": true,
-    "singleQuote": false
-  },
-  "author": "Jacob",
-  "license": "MIT",
-  "devDependencies": {
-    "@es-pack/esbuild-sass-plugin": "^1.0.4",
-    "esbuild-plugin-postcss2": "^0.0.9",
-    "sass": "^1.37.5"
-  },
-  "dependencies": {
-    "@aotearoan/sass-farbig": "^4.0.4",
-    "@rollup/plugin-commonjs": "^20.0.0",
-    "@rollup/plugin-node-resolve": "^13.0.4",
-    "@rollup/plugin-typescript": "^8.2.5",
-    "autoprefixer": "^10.3.1",
-    "css-loader": "^6.2.0",
-    "esbuild": "^0.12.19",
-    "esbuild-plugin-sass": "^0.6.0",
-    "esbuild-sass-plugin": "^1.4.13",
-    "file-loader": "^6.2.0",
-    "install": "^0.13.0",
-    "lit": "^2.0.0-rc.2",
-    "mathsass": "^0.11.0",
-    "npm": "^7.20.5",
-    "path": "^0.12.7",
-    "postcss": "^8.3.6",
-    "postcss-preset-env": "^6.7.0",
-    "rollup": "^2.56.0",
-    "rollup-plugin-copy": "^3.4.0",
-    "rollup-plugin-postcss": "^4.0.0",
-    "rollup-plugin-scss": "^3.0.0",
-    "rollup-plugin-terser": "^7.0.2",
-    "sass-loader": "^12.1.0",
-    "style-loader": "^3.2.1",
-    "typescript": "^4.3.5",
-    "webpack": "^5.49.0"
-  }
+    "name": "miliband-components",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "build": "DEBUG=FALSE node build.js",
+        "dev": "DEBUG=TRUE node build.js",
+        "serve": "docsify serve"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/JacobWeinbren/miliband-components.git"
+    },
+    "keywords": [
+        "custom-components",
+        "storybook"
+    ],
+    "prettier": {
+        "trailingComma": "es5",
+        "tabWidth": 4,
+        "semi": true,
+        "singleQuote": false
+    },
+    "author": "Jacob",
+    "license": "MIT",
+    "devDependencies": {
+        "@es-pack/esbuild-sass-plugin": "^1.0.4",
+        "esbuild-plugin-postcss2": "^0.0.9",
+        "sass": "^1.37.5"
+    },
+    "dependencies": {
+        "@aotearoan/sass-farbig": "^4.0.4",
+        "@rollup/plugin-commonjs": "^20.0.0",
+        "@rollup/plugin-node-resolve": "^13.0.4",
+        "@rollup/plugin-typescript": "^8.2.5",
+        "autoprefixer": "^10.3.1",
+        "css-loader": "^6.2.0",
+        "esbuild": "^0.12.19",
+        "esbuild-plugin-sass": "^0.6.0",
+        "esbuild-sass-plugin": "^1.4.13",
+        "file-loader": "^6.2.0",
+        "install": "^0.13.0",
+        "lit": "^2.0.0-rc.2",
+        "mathsass": "^0.11.0",
+        "npm": "^7.20.5",
+        "path": "^0.12.7",
+        "postcss": "^8.3.6",
+        "postcss-preset-env": "^6.7.0",
+        "rollup": "^2.56.0",
+        "rollup-plugin-copy": "^3.4.0",
+        "rollup-plugin-postcss": "^4.0.0",
+        "rollup-plugin-scss": "^3.0.0",
+        "rollup-plugin-terser": "^7.0.2",
+        "sass-loader": "^12.1.0",
+        "style-loader": "^3.2.1",
+        "typescript": "^4.3.5",
+        "webpack": "^5.49.0"
+    }
 }
