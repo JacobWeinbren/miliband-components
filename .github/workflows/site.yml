@@ -1,24 +1,29 @@
-name: build-components
-
+name: Deploy
 on:
     push:
-        branches: [main]
-    pull_request:
-        branches: [main]
-
-    workflow_dispatch:
-
+        branches:
+            - master
 jobs:
-    publish:
+    deploy:
         runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node-version: [12.x]
         steps:
-            - name: Check out repo
-              uses: actions/checkout@v2
-            - name: Set up Node
-              uses: actions/setup-node@v2
+            - uses: actions/checkout@v1
+            - name: Use Node.js
+              uses: actions/setup-node@v1
               with:
-                  node-version: "12"
-            - name: Build Component Library
-              run: |
-                  yarn install
-                  yarn build
+                  node-version: ${{ matrix.node-version }}
+            - name: Install Packages
+              run: yarn install
+            - name: Build page
+              run: yarn build
+            - name: Deploy to gh-pages
+              if: success()
+              uses: crazy-max/ghaction-github-pages@v2
+              with:
+                  target_branch: master
+                  build_dir: build
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
