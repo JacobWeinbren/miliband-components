@@ -5,3 +5,7 @@
 .app-name-link img {
 	height: 200px;
 }
+
+a {
+	font-weight: 400;
+}

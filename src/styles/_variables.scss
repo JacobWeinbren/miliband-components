@@ -107,6 +107,13 @@ $breakpoints: (
     }
 }
 
+@include breakpoint(md) {
+    :root {
+        --space-unit: 1.25em;
+        --component-padding: #{map-get($spacing, "md")};
+    }
+}
+
 /*
 Misc
 */

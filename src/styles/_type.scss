@@ -62,6 +62,15 @@ body {
     background: var(--inverse);
 }
 
+@supports (--css: variables) {
+    @include variables.breakpoint(md) {
+        :root {
+            --text-base-size: 1.25em;
+            --text-scale-ratio: 1.25;
+        }
+    }
+}
+
 h1,
 h2,
 h3,
