@@ -10,6 +10,7 @@ yarn-error.log*
 
 ## Output
 /dist
+docs/dist
 
 ## Misc
 cover.afphoto
