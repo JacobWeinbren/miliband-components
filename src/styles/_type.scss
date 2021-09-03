@@ -1,0 +1,140 @@
+@use "sass:math";
+@use "variables";
+
+/* With thanks to https://google-webfonts-helper.herokuapp.com/ */
+/* fira-sans-regular - latin */
+@font-face {
+    font-family: "Fira Sans";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../assets/fonts/fira-sans-v11-latin/fira-sans-v11-latin-regular.eot"); /* IE9 Compat Modes */
+    src: local(""),
+        url("../assets/fonts/fira-sans-v11-latin/fira-sans-v11-latin-regular.eot?#iefix")
+            format("embedded-opentype"),
+        /* IE6-IE8 */
+            url("../assets/fonts/fira-sans-v11-latin/fira-sans-v11-latin-regular.woff2")
+            format("woff2"),
+        /* Super Modern Browsers */
+            url("../assets/fonts/fira-sans-v11-latin/fira-sans-v11-latin-regular.woff")
+            format("woff"),
+        /* Modern Browsers */
+            url("../assets/fonts/fira-sans-v11-latin/fira-sans-v11-latin-regular.ttf")
+            format("truetype"),
+        /* Safari, Android, iOS */
+            url("../assets/fonts/fira-sans-v11-latin/fira-sans-v11-latin-regular.svg#FiraSans")
+            format("svg"); /* Legacy iOS */
+}
+
+/* https://medium.com/codyhouse/create-your-design-system-part-1-typography-7c630d9092bd */
+/* https://codyhouse.co/ds/docs/framework/typography */
+$font: "Fira Sans", Helvetica, Arial, sans-serif;
+$base-size: 1em;
+$base-ratio: 1.2;
+$heading-line-height: 1.2;
+$body-line-height: 1.4;
+
+:root {
+    --font: $font;
+    --text-base-size: $base-size;
+    --text-scale-ratio: $base-ratio;
+    --text: #{variables.$black};
+    --inverse: #{variables.$white};
+
+    --text-xs: calc(
+        $base-size / (var(--text-scale-ratio) * var(--text-scale-ratio))
+    );
+    --text-sm: calc(var(--text-xs) * var(--text-scale-ratio));
+    --text-md: calc(
+        var(--text-sm) * var(--text-scale-ratio) * var(--text-scale-ratio)
+    );
+    --text-lg: calc(var(--text-md) * var(--text-scale-ratio));
+    --text-xl: calc(var(--text-lg) * var(--text-scale-ratio));
+    --text-xxl: calc(var(--text-xl) * var(--text-scale-ratio));
+    --text-xxxl: calc(var(--text-xxl) * var(--text-scale-ratio));
+    --text-xxxxl: calc(var(--text-xxxl) * var(--text-scale-ratio));
+}
+
+/* Applies Text Size */
+body {
+    font-size: var(--text-base-size);
+    font-family: $font;
+    color: var(--text);
+    background: var(--inverse);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form legend {
+    color: var(--text);
+    margin-bottom: var(--space-xxs);
+    line-height: var(--heading-line-height);
+}
+
+.text--xxxl {
+    font-size: var(--text-xxxl);
+}
+
+h1,
+.text--xxl {
+    font-size: var(--text-xxl);
+    margin-bottom: var(--space-lg);
+}
+
+h2,
+.text--xl {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-md);
+}
+
+h3,
+.text--lg {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-sm);
+}
+
+h4,
+h5,
+h6 .text--md {
+    font-size: var(--text-md);
+    margin-bottom: var(--space-sm);
+}
+
+.text--sm,
+small {
+    font-size: var(--text-sm);
+}
+
+.text--xs {
+    font-size: var(--text-xs);
+}
+
+p {
+    line-height: $body-line-height;
+    margin-bottom: var(--space-sm);
+}
+
+.text-container {
+    h2,
+    h3,
+    h4 {
+        margin-top: var(--space-sm);
+    }
+
+    ul,
+    ol,
+    p {
+        margin-bottom: var(--space-md);
+    }
+}
+
+a {
+    color: var(--col-brand-500);
+
+    &:visited {
+        color: var(--col-brand-1000);
+    }
+}

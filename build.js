@@ -3,7 +3,7 @@ const path = require("path");
 const sassPlugin = require("esbuild-sass-plugin").sassPlugin;
 
 //On Watch
-if (watch == true) {
+if (process.env.DEBUG == "TRUE") {
     var watch = {
         onRebuild(error, result) {
             if (error) console.error("Watch Build Failed:", error);
@@ -29,7 +29,8 @@ esbuild
         sourcemap: "external",
         plugins: [
             sassPlugin({
-                quietDeps: true,
+                outputStyle: "compressed",
+                sourceMap: false,
             }),
         ],
         loader: {

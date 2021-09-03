@@ -1,20 +1,114 @@
+@use "sass:math";
+@use "sass:color";
+
 /*
 Colours
 */
-$text: "black";
-$inverse: "white";
-$primary: #f04c53;
+//From https://sparagino.it/2020/06/09/sass-only-material-angular-palette-generator/
+@function multiply($rgb1, $rgb2) {
+    $r: math.floor(math.div(red($rgb1) * red($rgb2), 255));
+    $g: math.floor(math.div(green($rgb1) * green($rgb2), 255));
+    $b: math.floor(math.div(blue($rgb1) * blue($rgb2), 255));
+    @return rgb($r, $g, $b);
+}
 
-//https://paletton.com/#uid=75B0u0klSuEccLvhAAUqPsrtami
-$secondary: #30968f;
+$black: #0c0c0c;
+$purple: #5438dc;
+$cyan: #008990;
+$blue: #0967ea;
+$yellow: #f9be00;
+$green: #40c057;
+$pink: #ee4b6a;
+$brand: #f04c53;
+$orange: #ff7f45;
+$white: #fff;
+$bone: #d7d0b8;
 
-//Greys
-//@import "~@aotearoan/sass-farbig";
-$grey: #525252; //map-get(neutral-palette(), d2)
-$grey-border: #c6c6c6; //map-get(high-contrast-palette(), l1)
+$colors: (
+    "black": $black,
+    "purple": $purple,
+    "cyan": $cyan,
+    "blue": $blue,
+    "yellow": $yellow,
+    "green": $green,
+    "pink": $pink,
+    "brand": $brand,
+    "orange": $orange,
+    "bone": $bone,
+);
+
+:root {
+    @each $key, $color in $colors {
+        $white: #fff;
+        $black: #000;
+        $baseDark: multiply($color, $color);
+        --col-#{$key}-50: #{color.mix($color, $white, 12%)};
+        --col-#{$key}-100: #{color.mix($color, $white, 30%)};
+        --col-#{$key}-200: #{color.mix($color, $white, 50%)};
+        --col-#{$key}-300: #{color.mix($color, $white, 70%)};
+        --col-#{$key}-400: #{color.mix($color, $white, 85%)};
+        --col-#{$key}-500: #{color.mix($color, $white, 100%)};
+        --col-#{$key}-600: #{color.mix($color, $baseDark, 87%)};
+        --col-#{$key}-700: #{color.mix($color, $baseDark, 70%)};
+        --col-#{$key}-800: #{color.mix($color, $baseDark, 54%)};
+        --col-#{$key}-900: #{color.mix($color, $baseDark, 25%)};
+        --col-#{$key}-1000: #{color.mix($color, $baseDark, 8.5%)};
+    }
+}
+
+/*
+Spacing
+*/
+$space-unit: 1em;
+
+$spacing: (
+    "xxxxs": 0.125 * $space-unit,
+    "xxxs": 0.25 * $space-unit,
+    "xxs": 0.375 * $space-unit,
+    "xs": 0.5 * $space-unit,
+    "sm": 0.75 * $space-unit,
+    "md": 1.25 * $space-unit,
+    "lg": 2 * $space-unit,
+    "xl": 3.25 * $space-unit,
+    "xxl": 5.25 * $space-unit,
+    "xxxl": 8.5 * $space-unit,
+    "xxxxl": 13.75 * $space-unit,
+);
+
+/*
+Breakpoints
+*/
+$breakpoints: (
+    xs: 32rem,
+    sm: 48rem,
+    md: 64rem,
+    lg: 80rem,
+    xl: 90rem,
+);
+
+/* https://css-tricks.com/snippets/sass/mixin-manage-breakpoints/ */
+/* https://medium.com/codyhouse/create-your-design-system-part-4-spacing-895c9213e2b9 */
+@mixin breakpoint($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media (min-width: map-get($breakpoints, $breakpoint)) {
+            @content;
+        }
+    } @else {
+        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+    }
+}
+
+:root {
+    --space-unit: #{$space-unit};
+    --component-padding: #{map-get($spacing, "sm")};
+    @each $key, $space in $spacing {
+        --space-#{$key}: #{$space};
+    }
+}
 
 /*
 Misc
 */
 $transition: all 70ms cubic-bezier(0, 0, 0.4, 0.9) 0s, width 0s ease 0s,
-	height 0s ease 0s;
+    height 0s ease 0s;

@@ -6,7 +6,7 @@
     "scripts": {
         "build": "DEBUG=FALSE node build.js",
         "dev": "DEBUG=TRUE node build.js",
-        "serve": "docsify serve"
+        "serve": "docsify serve ./docs"
     },
     "repository": {
         "type": "git",
@@ -31,6 +31,8 @@
     },
     "dependencies": {
         "@aotearoan/sass-farbig": "^4.0.4",
+        "@fortawesome/fontawesome-svg-core": "^1.2.36",
+        "@fortawesome/free-solid-svg-icons": "^5.15.4",
         "@rollup/plugin-commonjs": "^20.0.0",
         "@rollup/plugin-node-resolve": "^13.0.4",
         "@rollup/plugin-typescript": "^8.2.5",
