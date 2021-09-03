@@ -3,7 +3,7 @@ const path = require("path");
 const sassPlugin = require("esbuild-sass-plugin").sassPlugin;
 
 //On Watch
-if (process.env.DEBUGx == "TRUE") {
+if (process.env.DEBUG == "TRUE") {
     var watch = {
         onRebuild(error, result) {
             if (error) console.error("Watch Build Failed:", error);
@@ -23,7 +23,7 @@ esbuild
             "components/mili-button": "src/components/mili-button.ts",
         },
         format: "esm",
-        outdir: "/dist",
+        outdir: "./dist",
         bundle: true,
         splitting: true,
         sourcemap: "external",
