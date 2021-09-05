@@ -42,6 +42,9 @@ $colors: (
         $white: #fff;
         $black: #000;
         $baseDark: multiply($color, $color);
+        @if $key == "black" {
+            --col-#{$key}-25: #{color.mix($color, $white, 3%)};
+        }
         --col-#{$key}-50: #{color.mix($color, $white, 12%)};
         --col-#{$key}-100: #{color.mix($color, $white, 30%)};
         --col-#{$key}-200: #{color.mix($color, $white, 50%)};
@@ -54,12 +57,14 @@ $colors: (
         --col-#{$key}-900: #{color.mix($color, $baseDark, 25%)};
         --col-#{$key}-1000: #{color.mix($color, $baseDark, 8.5%)};
     }
+    --text: var(--colo-black-500);
+    --inverse: #{$white};
 }
 
 /*
 Spacing
 */
-$space-unit: 1em;
+$space-unit: 1ex;
 
 $spacing: (
     "xxxxs": 0.125 * $space-unit,
@@ -67,12 +72,13 @@ $spacing: (
     "xxs": 0.375 * $space-unit,
     "xs": 0.5 * $space-unit,
     "sm": 0.75 * $space-unit,
-    "md": 1.25 * $space-unit,
-    "lg": 2 * $space-unit,
-    "xl": 3.25 * $space-unit,
-    "xxl": 5.25 * $space-unit,
-    "xxxl": 8.5 * $space-unit,
-    "xxxxl": 13.75 * $space-unit,
+    "md": 1 * $space-unit,
+    "lg": 1.5 * $space-unit,
+    "xl": 2 * $space-unit,
+    "xxl": 3.5 * $space-unit,
+    "xxxl": 5 * $space-unit,
+    "xxxxl": 6 * $space-unit,
+    "xxxxxl": 7 * $space-unit,
 );
 
 /*
@@ -101,21 +107,24 @@ $breakpoints: (
 
 :root {
     --space-unit: #{$space-unit};
-    --component-padding: #{map-get($spacing, "sm")};
     @each $key, $space in $spacing {
         --space-#{$key}: #{$space};
     }
-}
-
-@include breakpoint(md) {
-    :root {
-        --space-unit: 1.25em;
-        --component-padding: #{map-get($spacing, "md")};
-    }
+    --component-padding: var(--space-xl);
 }
 
 /*
 Misc
 */
-$transition: all 70ms cubic-bezier(0, 0, 0.4, 0.9) 0s, width 0s ease 0s,
+$transition-fast: all 0.25s cubic-bezier(0, 0, 0.4, 0.9) 0s, width 0s ease 0s,
     height 0s ease 0s;
+$transition-medium: all 0.5s cubic-bezier(0, 0, 0.4, 0.9) 0s, width 0s ease 0s,
+    height 0s ease 0s;
+$transition-slow: all 1s cubic-bezier(0, 0, 0.4, 0.9) 0s, width 0s ease 0s,
+    height 0s ease 0s;
+
+:root {
+    --transition-fast: #{$transition-fast};
+    --transition-medium: #{$transition-medium};
+    --transition-slow: #{$transition-slow};
+}

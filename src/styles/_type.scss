@@ -1,12 +1,24 @@
 @use "sass:math";
 @use "variables";
 
+/* https://medium.com/codyhouse/create-your-design-system-part-1-typography-7c630d9092bd */
+/* https://codyhouse.co/ds/docs/framework/typography */
+$font: "Fira Sans", Helvetica, Arial, sans-serif;
+$base-size: 1em;
+$base-weight: 400;
+$heading-weight: 600;
+$base-ratio: 1.2;
+$heading-line-height: calc(1ex / 0.42);
+$body-line-height: calc(1ex / 0.32);
+$letter-spacing: 0;
+$word-spacing: 0;
+
 /* With thanks to https://google-webfonts-helper.herokuapp.com/ */
 /* fira-sans-regular - latin */
 @font-face {
     font-family: "Fira Sans";
     font-style: normal;
-    font-weight: 400;
+    font-weight: #{$base-weight};
     src: url("../assets/fonts/fira-sans-v11-latin/fira-sans-v11-latin-regular.eot"); /* IE9 Compat Modes */
     src: local(""),
         url("../assets/fonts/fira-sans-v11-latin/fira-sans-v11-latin-regular.eot?#iefix")
@@ -25,23 +37,20 @@
             format("svg"); /* Legacy iOS */
 }
 
-/* https://medium.com/codyhouse/create-your-design-system-part-1-typography-7c630d9092bd */
-/* https://codyhouse.co/ds/docs/framework/typography */
-$font: "Fira Sans", Helvetica, Arial, sans-serif;
-$base-size: 1em;
-$base-ratio: 1.2;
-$heading-line-height: 1.2;
-$body-line-height: 1.4;
-
 :root {
-    --font: $font;
-    --text-base-size: $base-size;
-    --text-scale-ratio: $base-ratio;
-    --text: #{variables.$black};
-    --inverse: #{variables.$white};
+    --font: #{$font};
+    --text-base-size: #{$base-size};
+    --text-base-weight: #{$base-weight};
+    --text-heading-weight: #{$heading-weight};
+    --text-scale-ratio: #{$base-ratio};
+
+    --body-line-height: #{$body-line-height};
+    --heading-line-height: #{$heading-line-height};
+    --word-spacing: #{$word-spacing};
+    --letter-spacing: #{$letter-spacing};
 
     --text-xs: calc(
-        $base-size / (var(--text-scale-ratio) * var(--text-scale-ratio))
+        #{$base-size} / (var(--text-scale-ratio) * var(--text-scale-ratio))
     );
     --text-sm: calc(var(--text-xs) * var(--text-scale-ratio));
     --text-md: calc(
@@ -54,94 +63,86 @@ $body-line-height: 1.4;
     --text-xxxxl: calc(var(--text-xxxl) * var(--text-scale-ratio));
 }
 
+/* Selection Colour */
+::selection {
+    background: var(--col-brand-100);
+}
+
 /* Applies Text Size */
+/* https://www.smashingmagazine.com/2020/07/css-techniques-legibility/ */
 body {
     font-size: var(--text-base-size);
-    font-family: $font;
+    font-family: var(--font);
     color: var(--text);
     background: var(--inverse);
+    word-spacing: var(--word-spacing);
+    line-height: var(--body-line-height);
 }
 
-@supports (--css: variables) {
-    @include variables.breakpoint(md) {
-        :root {
-            --text-base-size: 1.25em;
-            --text-scale-ratio: 1.25;
-        }
-    }
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-form legend {
-    color: var(--text);
-    margin-bottom: var(--space-xxs);
-    line-height: var(--heading-line-height);
-}
-
-.text--xxxl {
-    font-size: var(--text-xxxl);
-}
-
-h1,
-.text--xxl {
+h1 {
     font-size: var(--text-xxl);
-    margin-bottom: var(--space-lg);
+    line-height: var(--space-lg);
+    margin: var(--space-lg) 0;
 }
 
-h2,
-.text--xl {
+h2 {
     font-size: var(--text-xl);
-    margin-bottom: var(--space-md);
+    line-height: var(--space-lg);
+    margin: var(--space-lg) 0;
 }
 
-h3,
-.text--lg {
+h3 {
     font-size: var(--text-lg);
-    margin-bottom: var(--space-sm);
+    line-height: var(--space-xl);
+    margin: var(--space-xl) 0;
 }
 
+h4 {
+    font-size: var(--text-md);
+    line-height: var(--space-xl);
+    margin: var(--space-xl) 0;
+}
+
+p,
+ol,
+ul {
+    font-size: var(--text-base-size);
+    line-height: var(--space-xxl);
+    width: 60ch;
+    max-width: 100%;
+}
+
+h5,
+small,
+h6 {
+    font-size: var(--text-md);
+    line-height: var(--space-xxl);
+    margin: var(--space-xxl) 0;
+}
+
+strong {
+    color: var(--color-black-400);
+    weight: var(--text-heading-weight);
+}
+
+h1,
+h2,
+h3,
 h4,
 h5,
-h6 .text--md {
-    font-size: var(--text-md);
-    margin-bottom: var(--space-sm);
+h6 {
+    color: var(--color-black-400);
 }
 
-.text--sm,
-small {
-    font-size: var(--text-sm);
-}
-
-.text--xs {
-    font-size: var(--text-xs);
-}
-
-p {
-    line-height: $body-line-height;
-    margin-bottom: var(--space-sm);
-}
-
-.text-container {
-    h2,
-    h3,
-    h4 {
-        margin-top: var(--space-sm);
-    }
-
-    ul,
-    ol,
-    p {
-        margin-bottom: var(--space-md);
+@supports (font-size-adjust: 1) {
+    article {
+        font-size-adjust: 0.5;
     }
 }
 
 a {
     color: var(--col-brand-500);
+    text-decoration: underline;
 
     &:visited {
         color: var(--col-brand-1000);

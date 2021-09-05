@@ -1,11 +1,166 @@
+/* App
+============================================================================= */
+:root {
+	--mono-shade3: var(--col-black-500);
+	--mono-shade2: var(--col-black-400);
+	--mono-shade1: var(--col-black-300);
+	--mono-base: var(--col-black-200);
+	--mono-tint1: var(--col-black-100);
+	--mono-tint2: var(--col-black-50);
+	--mono-tint3: var(--col-black-25);
+
+	--theme-color: var(--var-brand-500);
+
+	--font-size-xxxl: var(--text-xxxl);
+	--font-size-xxl: var(--text-xxl);
+	--font-size-xl: var(--text-xl);
+	--font-size-l: var(--text-l);
+	--font-size-m: var(--text-m);
+	--font-size-s: var(--text-s);
+	--font-size-xs: var(--text-xs);
+}
+
+/* Base
+============================================================================= */
+:root {
+	--base-background-color: var(--inverse);
+	--base-color: var(--text);
+	--base-font-family: var(--font);
+	--base-font-size: var(--text-base-size);
+	--base-font-weight: var(--text-base-weight);
+	--base-letter-spacing: var(--letter-spacing);
+	--base-line-height: var(--body-line-height);
+
+	/* Horizontal Rule */
+	--hr-border: 1px solid var(--mono-tint2);
+
+	/* Mark */
+	--mark-background: var(--col-yellow-100);
+
+	/* Preformatted */
+	--pre-font-family: var(--font);
+	--pre-font-size: var(--text-base-size);
+	--pre-font-weight: var(--text-base-weight);
+	--pre-line-height: var(--body-line-height);
+
+	/* Selection */
+	--selection-color: var(--col-brand-100);
+
+	/* Small */
+	--small-font-size: var(--font-size-s);
+
+	/* Strong */
+	--strong-color: var(--colo-black-400);
+	--strong-font-weight: var(--text-heading-weight);
+
+	/* Sub/Sup */
+	--subsup-font-size: var(--font-size-s);
+}
+
+/* Content
+============================================================================= */
+:root {
+	/* Blockquote */
+	--blockquote-background: var(--mono-tint3);
+	--blockquote-border-style: solid;
+	--blockquote-em-font-weight: var(--text-base-weight);
+	--blockquote-font-weight: var(--text-base-weight);
+
+	/* Code */
+	--code-font-family: Inconsolata, Consolas, Menlo, Monaco, "Andale Mono WT",
+		"Andale Mono", "Lucida Console", "DejaVu Sans Mono",
+		"Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
+	--code-font-size: calc(var(--font-size-m) * 0.95);
+	--code-font-weight: var(--text-base-weight);
+	--code-tab-size: 4;
+
+	--code-block-border-radius: var(--border-radius-m);
+	--code-block-line-height: var(--base-line-height);
+	--code-block-margin: var(--space-xl) 0;
+	--code-block-padding: var(--space-xl);
+
+	--code-theme-background: var(--mono-tint3);
+
+	/* Headings */
+	--heading-color: var(--color-black-400);
+	--heading-margin: var(--space-lg) 0 0;
+	--heading-pading: 0;
+	--heading-h1-border-style: solid;
+	--heading-h1-font-size: var(--font-size-xxl);
+	--heading-h1-margin: var(--space-lg);
+	--heading-h1-padding: 0;
+	--heading-h2-font-size: var(--font-size-xl);
+	--heading-h2-margin: var(--space-lg) 0;
+	--heading-h2-padding: 0;
+	--heading-h3-font-size: var(--font-size-l);
+	--heading-h3-margin: var(--space-xl) 0;
+	--heading-h3-padding: 0;
+	--heading-h4-font-size: var(--font-size-m);
+	--heading-h4-margin: var(--space-xl) 0;
+	--heading-h4-padding: 0;
+	--heading-h5-font-size: var(--font-size-s);
+	--heading-h5-margin: var(--space-xxl) 0;
+	--heading-h4-padding: 0;
+	--heading-h6-font-size: var(--font-size-xs);
+	--heading-h6-margin: var(--space-xxl) 0;
+	--heading-h6-padding: 0;
+
+	/* Keyboard */
+	--kbd-background: var(--mono-tint3);
+	--kbd-border-radius: var(--border-radius-m);
+	--kbd-margin: 0 var(--space-sm);
+	--kbd-min-width: var(--space-lg);
+	--kbd-padding: var(--space-sm) var(--space-sm);
+
+	/* Links */
+	--link-text-decoration: underline;
+
+	/* Notice */
+	--notice-background: var(--mono-tint3);
+	--notice-border-style: solid;
+	--notice-font-weight: normal;
+	--notice-padding: var(--space-lg) var(--space-lg) var(--space-lg)
+		var(--space-xxxxl);
+
+	/* Notice - Pseudo */
+	--notice-before-font-weight: normal;
+
+	--table-cell-padding: var(--tb-cell-padding);
+	--table-head-border-color: var(--tb-head-border-color);
+	--table-head-font-weight: var(--tb-head-font-weight);
+	--table-row-odd-background: var(--tb-row-odd-background);
+}
+
+/* Navbar
+============================================================================= */
+:root {
+	/* Root */
+	--navbar-root-margin: 0 0 0 var(--space-md);
+	--navbar-root-transition: all var(--duration-fast);
+
+	/* Menus */
+	--navbar-menu-background: var(--base-background-color);
+	--navbar-menu-box-shadow: rgba(45, 45, 45, 0.05) 0px 0px 1px,
+		rgba(49, 49, 49, 0.05) 0px 1px 2px, rgba(42, 42, 42, 0.05) 0px 2px 4px,
+		rgba(32, 32, 32, 0.05) 0px 4px 8px, rgba(49, 49, 49, 0.05) 0px 8px 16px,
+		rgba(35, 35, 35, 0.05) 0px 16px 32px;
+	--navbar-menu-padding: var(--space-sm);
+	--navbar-menu-transition: all var(--duration-fast);
+
+	/* Menu Links */
+	--navbar-menu-link-margin: var(--space-sm) var(--space-sm);
+	--navbar-menu-link-padding: var(--space-xs) 0;
+}
+
 .markdown-section {
 	max-width: 860px;
 }
 
-.app-name-link img {
-	height: 200px;
+.markdown-section table tr td,
+.markdown-section table th {
+	border-right: 1px solid var(--col-black-50);
 }
 
-a {
-	font-weight: 400;
+.markdown-section table {
+	border: 1px solid var(--col-black-50);
 }

@@ -1,0 +1,26 @@
+/* Tables */
+@use "type";
+
+:root {
+    --tb-cell-padding: var(--space-md) var(--space-sm);
+    --tb-head-border-color: var(--col-black-300);
+    --tb-head-font-weight: var(--text-heading-weight);
+    --tb-row-odd-background: var(--col-black-25);
+}
+
+table tr:first {
+    font-weight: var(--tb-head-font-weight);
+}
+
+table tr td,
+table th {
+    border-right: 1px solid var(--col-black-50);
+}
+
+table {
+    border: 1px solid var(--col-black-50);
+}
+
+tbody tr:nth-child(odd) {
+    background-color: var(--tb-row-odd-background);
+}

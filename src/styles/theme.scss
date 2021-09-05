@@ -1,12 +1,8 @@
 @use 'sass:meta';
 @use "type";
 @use "variables";
+@use "html";
 
 html {
     box-sizing: border-box;
-}
-
-/* Misc */
-:root {
-    --transition: #{variables.$transition};
 }

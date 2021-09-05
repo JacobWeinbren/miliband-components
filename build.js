@@ -1,5 +1,10 @@
 const esbuild = require("esbuild");
 const path = require("path");
+
+const postcss = require("postcss");
+const autoprefixer = require("autoprefixer");
+const postcssPresetEnv = require("postcss-preset-env");
+
 const sassPlugin = require("esbuild-sass-plugin").sassPlugin;
 
 //On Watch
@@ -27,7 +32,17 @@ esbuild
         bundle: true,
         splitting: true,
         sourcemap: "external",
-        plugins: [sassPlugin()],
+        plugins: [
+            sassPlugin({
+                async transform(source, resolveDir) {
+                    const { css } = await postcss([
+                        autoprefixer,
+                        postcssPresetEnv({ stage: 0 }),
+                    ]).process(source, { from: undefined });
+                    return css;
+                },
+            }),
+        ],
         loader: {
             ".scss": "css",
             ".png": "file",

@@ -4,9 +4,19 @@
 
 ## Build
 
-Clone the repo, cd into the directory, then run `yarn install && yarn run build`
+```bash
+gh repo clone https://github.com/JacobWeinbren/miliband-components.git
+cd miliband-components
+yarn install
+yarn build
+```
 
-For the docs, `cd site` then `yarn run start`.
+For the docs, run the following
+
+```bash
+ln -s ../dist
+yarn run start
+```
 
 ## Production
 
