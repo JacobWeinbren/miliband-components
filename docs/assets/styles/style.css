@@ -152,6 +152,10 @@
 	--navbar-menu-link-padding: var(--space-xs) 0;
 }
 
+.markdown-section .tip {
+	margin: var(--space-lg) 0;
+}
+
 .markdown-section {
 	max-width: 860px;
 }

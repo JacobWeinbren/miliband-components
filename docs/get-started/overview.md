@@ -31,13 +31,13 @@ To make Miliband Components work in a wide range of uses, it uses the following 
 -   On completion, The Social Review aims to have an external assessment of accessibilty support
 -   Miliband Components are tested for bugs all major browsers - Chrome, Firefox, Safari, Edge and Opera
 
-!> We encourage anyone using Miliband Components to read and follow accessibility notices. They will look like this.
-
 ![Chrome Logo](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/70.1.0/chrome/chrome_48x48.png)
 ![Firefox Logo](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/70.1.0/firefox/firefox_48x48.png)
 ![Safari Logo](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/70.1.0/safari/safari_48x48.png)
 ![Edge Logo](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/70.1.0/edge/edge_48x48.png)
 ![Opera Logo](https://cdnjs.cloudflare.com/ajax/libs/browser-logos/70.1.0/opera/opera_48x48.png)
+
+!> We encourage anyone using Miliband Components to read and follow accessibility notices. They will look like this.
 
 ## Install
 
