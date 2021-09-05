@@ -87,7 +87,7 @@
 	--heading-pading: 0;
 	--heading-h1-border-style: solid;
 	--heading-h1-font-size: var(--font-size-xxl);
-	--heading-h1-margin: var(--space-lg);
+	--heading-h1-margin: var(--space-lg) 0;
 	--heading-h1-padding: 0;
 	--heading-h2-font-size: var(--font-size-xl);
 	--heading-h2-margin: var(--space-lg) 0;
