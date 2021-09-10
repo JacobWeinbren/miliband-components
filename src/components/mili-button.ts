@@ -1,8 +1,7 @@
 import { html, css, LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
-import { icon } from "@fortawesome/fontawesome-svg-core";
-import { faCamera } from "@fortawesome/free-solid-svg-icons";
+import { ArrowRight } from "@emotion-icons/bootstrap/ArrowRight";
 
 @customElement("mili-button")
 export class MiliButton extends LitElement {
@@ -39,22 +38,13 @@ export class MiliButton extends LitElement {
     @property()
     kind = "Light";
 
+    @property()
+    icon = false;
+
     getIcon() {
         if (this.icon) {
-            return html`${icon(faCamera).node}`;
+            return html`<ArrowRight />`;
         }
-    }
-
-    static get properties() {
-        return {
-            class: { type: String },
-        };
-    }
-
-    constructor() {
-        super();
-        this.class = "light";
-        this.text = "Button";
     }
 
     render() {
