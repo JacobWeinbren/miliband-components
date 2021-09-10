@@ -1,4 +1,3 @@
-import typescript from "@rollup/plugin-typescript";
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import sass from "rollup-plugin-sass";
@@ -6,7 +5,7 @@ import autoprefixer from "autoprefixer";
 import postcss from "postcss";
 import copy from "rollup-plugin-copy";
 import babel from "@rollup/plugin-babel";
-import { terser } from "rollup-plugin-terser";
+import esbuild from "rollup-plugin-esbuild";
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -40,7 +39,6 @@ export default {
         }),
         //Main functions
         resolve(),
-        typescript(),
         sass({
             output: "dist/styles/theme.css",
             processor: (css) =>
@@ -51,6 +49,8 @@ export default {
         copy({
             targets: [{ src: "src/assets", dest: "dist" }],
         }),
-        production && terser(),
+        esbuild({
+            minify: production === true,
+        }),
     ],
 };
