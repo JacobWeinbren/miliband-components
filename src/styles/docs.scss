@@ -1,0 +1,42 @@
+/* Github Corner Icon */
+
+.github-corner {
+	display: none;
+}
+
+/* Header */
+.app-nav {
+	position: relative;
+
+	.app-name {
+		background: var(--col-pink-100);
+		border-bottom: 3px solid var(--col-black-500);
+		margin: 0;
+		display: block;
+		width: 100%;
+		text-align: center;
+	}
+}
+
+/* Content */
+
+.content {
+	position: absolute;
+	top: 0;
+	left: 300px;
+}
+
+.markdown-section {
+	padding: var(--space-md);
+	max-width: 860px;
+}
+
+/* Tables */
+.markdown-section table tr td,
+.markdown-section table th {
+	border-right: 1px solid var(--col-black-50);
+}
+
+.markdown-section table {
+	border: 1px solid var(--col-black-50);
+}

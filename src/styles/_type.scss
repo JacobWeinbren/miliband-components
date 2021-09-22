@@ -8,8 +8,8 @@ $base-size: 1em;
 $base-weight: 400;
 $heading-weight: 600;
 $base-ratio: 1.2;
-$heading-line-height: calc(1ex / 0.42);
-$body-line-height: calc(1ex / 0.32);
+$heading-line-height: var(--space-lg);
+$body-line-height: var(--space-lg);
 $letter-spacing: 0;
 $word-spacing: 0;
 
@@ -80,48 +80,51 @@ body {
 }
 
 h1 {
-    font-size: var(--text-xxl);
-    line-height: var(--space-lg);
-    margin: var(--space-lg) 0;
+    font-size: var(--text-xl);
+    margin: var(--space-md) 0 var(--space-sm) 0;
 }
 
 h2 {
-    font-size: var(--text-xl);
-    line-height: var(--space-lg);
-    margin: var(--space-lg) 0;
+    font-size: var(--text-lg);
+    margin: var(--space-md) 0 var(--space-sm) 0;
 }
 
 h3 {
-    font-size: var(--text-lg);
-    line-height: var(--space-xl);
-    margin: var(--space-xl) 0;
+    font-size: var(--text-md);
+    margin: var(--space-sm) 0 var(--space-xs) 0;
 }
 
 h4 {
-    font-size: var(--text-md);
-    line-height: var(--space-xl);
-    margin: var(--space-xl) 0;
+    font-size: var(--text-sm);
+    margin: var(--space-sm) 0 var(--space-xs) 0;
 }
 
 p,
 ol,
-ul {
+ul,
+i,
+b {
+    display: block;
     font-size: var(--text-base-size);
-    line-height: var(--space-xxl);
     width: 60ch;
     max-width: 100%;
+    margin: 0 0 var(--space-md) 0;
 }
 
 h5,
 small,
 h6 {
-    font-size: var(--text-md);
-    line-height: var(--space-xxl);
-    margin: var(--space-xxl) 0;
+    font-size: var(--text-xs);
+    margin: var(--space-sm) 0 var(--space-xs) 0;
+}
+
+small {
+    font-size: var(--text-xs);
+    margin: 0;
 }
 
 strong {
-    color: var(--color-black-400);
+    color: var(--col-black-400);
     weight: var(--text-heading-weight);
 }
 
@@ -131,20 +134,37 @@ h3,
 h4,
 h5,
 h6 {
-    color: var(--color-black-400);
+    color: var(--col-black-400);
+    line-height: var(--heading-line-height);
+    transition: all var(--transition-fast);
+
+    a {
+        color: var(--col-black-400);
+        text-decoration: none;
+        cursor: pointer;
+
+        &:hover {
+            text-decoration: underline;
+            text-decoration-color: var(--col-brand-900);
+        }
+    }
+}
+
+.description {
+    margin: 0 0 var(--space-md) 0;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin: 0 0 var(--space-xxxs) 0;
+    }
 }
 
 @supports (font-size-adjust: 1) {
     article {
         font-size-adjust: 0.5;
-    }
-}
-
-a {
-    color: var(--col-brand-500);
-    text-decoration: underline;
-
-    &:visited {
-        color: var(--col-brand-1000);
     }
 }

@@ -1,6 +1,9 @@
-# Miliband Components
+<div class="description">
+	<h1>Miliband Components</h1>
+	<b>A component library build for the Miliband Theme</b>
+</div>
 
-**A component library build for the Miliband Theme**
+<img width="150px" src="assets/images/cover.png" />
 
 -   Responsive for mobile devices 📱
 -   Built from the ground up for accessibility support ♿
@@ -15,7 +18,7 @@
 
 Built by [Jacob Weinbren](https://github.com/JacobWeinbren), and friends at [The Social Review](https://www.thesocialreview.co.uk/).
 
-## Lit Element
+## Features
 
 There are some really exciting aspects to building this as a component library:
 

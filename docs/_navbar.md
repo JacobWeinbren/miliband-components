@@ -1,0 +1,5 @@
+-   [Getting Started](/)
+-   [Styles](styles/typography)
+-   [Components](styles/typography)
+-   [Utilities](styles/typography)
+-   [Resources](styles/typography)

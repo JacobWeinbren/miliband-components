@@ -1,5 +1,6 @@
-/* App
-============================================================================= */
+/* 
+App
+*/
 :root {
 	--mono-shade3: var(--col-black-500);
 	--mono-shade2: var(--col-black-400);
@@ -20,8 +21,9 @@
 	--font-size-xs: var(--text-xs);
 }
 
-/* Base
-============================================================================= */
+/* 
+Base
+*/
 :root {
 	--base-background-color: var(--inverse);
 	--base-color: var(--text);
@@ -47,18 +49,19 @@
 	--selection-color: var(--col-brand-100);
 
 	/* Small */
-	--small-font-size: var(--font-size-s);
+	--small-font-size: var(--text-s);
 
 	/* Strong */
 	--strong-color: var(--colo-black-400);
 	--strong-font-weight: var(--text-heading-weight);
 
 	/* Sub/Sup */
-	--subsup-font-size: var(--font-size-s);
+	--subsup-font-size: var(--text-s);
 }
 
-/* Content
-============================================================================= */
+/* 
+Content
+*/
 :root {
 	/* Blockquote */
 	--blockquote-background: var(--mono-tint3);
@@ -70,47 +73,47 @@
 	--code-font-family: Inconsolata, Consolas, Menlo, Monaco, "Andale Mono WT",
 		"Andale Mono", "Lucida Console", "DejaVu Sans Mono",
 		"Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
-	--code-font-size: calc(var(--font-size-m) * 0.95);
+	--code-font-size: calc(var(--text-m) * 0.95);
 	--code-font-weight: var(--text-base-weight);
 	--code-tab-size: 4;
 
-	--code-block-border-radius: var(--border-radius-m);
+	--code-block-border-radius: 0;
 	--code-block-line-height: var(--base-line-height);
-	--code-block-margin: var(--space-xl) 0;
-	--code-block-padding: var(--space-xl);
+	--code-block-margin: 0;
+	--code-block-padding: var(--space-lg);
 
 	--code-theme-background: var(--mono-tint3);
 
 	/* Headings */
 	--heading-color: var(--color-black-400);
-	--heading-margin: var(--space-lg) 0 0;
+	--heading-margin: 0;
 	--heading-pading: 0;
 	--heading-h1-border-style: solid;
-	--heading-h1-font-size: var(--font-size-xxl);
-	--heading-h1-margin: var(--space-lg) 0;
+	--heading-h1-font-size: var(--text-xxl);
+	--heading-h1-margin: var(--space-md) 0 var(--space-sm) 0;
 	--heading-h1-padding: 0;
-	--heading-h2-font-size: var(--font-size-xl);
-	--heading-h2-margin: var(--space-lg) 0;
+	--heading-h2-font-size: var(--text-xl);
+	--heading-h2-margin: var(--space-sm) 0 var(--space-xs) 0;
 	--heading-h2-padding: 0;
-	--heading-h3-font-size: var(--font-size-l);
-	--heading-h3-margin: var(--space-xl) 0;
+	--heading-h3-font-size: var(--text-lg);
+	--heading-h3-margin: var(--space-xs) 0 var(--space-xxs) 0;
 	--heading-h3-padding: 0;
-	--heading-h4-font-size: var(--font-size-m);
-	--heading-h4-margin: var(--space-xl) 0;
+	--heading-h4-font-size: var(--text-md);
+	--heading-h4-margin: var(--space-xs) 0 var(--space-xxs) 0;
 	--heading-h4-padding: 0;
-	--heading-h5-font-size: var(--font-size-s);
-	--heading-h5-margin: var(--space-xxl) 0;
+	--heading-h5-font-size: var(--text-sm);
+	--heading-h5-margin: var(--space-xs) 0 var(--space-xxs) 0;
 	--heading-h4-padding: 0;
-	--heading-h6-font-size: var(--font-size-xs);
-	--heading-h6-margin: var(--space-xxl) 0;
+	--heading-h6-font-size: var(--text-sm);
+	--heading-h6-margin: var(--space-xs) 0 var(--space-xxs) 0;
 	--heading-h6-padding: 0;
 
 	/* Keyboard */
 	--kbd-background: var(--mono-tint3);
 	--kbd-border-radius: var(--border-radius-m);
-	--kbd-margin: 0 var(--space-sm);
-	--kbd-min-width: var(--space-lg);
-	--kbd-padding: var(--space-sm) var(--space-sm);
+	--kbd-margin: 0 var(--space-xs);
+	--kbd-min-width: var(--space-md);
+	--kbd-padding: var(--space-sm);
 
 	/* Links */
 	--link-text-decoration: underline;
@@ -119,8 +122,8 @@
 	--notice-background: var(--mono-tint3);
 	--notice-border-style: solid;
 	--notice-font-weight: normal;
-	--notice-padding: var(--space-lg) var(--space-lg) var(--space-lg)
-		var(--space-xxxxl);
+	--notice-padding: var(--space-md) var(--space-md) var(--space-md)
+		var(--space-xxl);
 
 	/* Notice - Pseudo */
 	--notice-before-font-weight: normal;
@@ -131,11 +134,12 @@
 	--table-row-odd-background: var(--tb-row-odd-background);
 }
 
-/* Navbar
-============================================================================= */
+/*
+Navbar
+*/
 :root {
 	/* Root */
-	--navbar-root-margin: 0 0 0 var(--space-md);
+	--navbar-root-margin: 0;
 	--navbar-root-transition: all var(--duration-fast);
 
 	/* Menus */
@@ -144,27 +148,10 @@
 		rgba(49, 49, 49, 0.05) 0px 1px 2px, rgba(42, 42, 42, 0.05) 0px 2px 4px,
 		rgba(32, 32, 32, 0.05) 0px 4px 8px, rgba(49, 49, 49, 0.05) 0px 8px 16px,
 		rgba(35, 35, 35, 0.05) 0px 16px 32px;
-	--navbar-menu-padding: var(--space-sm);
+	--navbar-menu-padding: 0;
 	--navbar-menu-transition: all var(--duration-fast);
 
 	/* Menu Links */
-	--navbar-menu-link-margin: var(--space-sm) var(--space-sm);
-	--navbar-menu-link-padding: var(--space-xs) 0;
-}
-
-.markdown-section .tip {
-	margin: var(--space-lg) 0;
-}
-
-.markdown-section {
-	max-width: 860px;
-}
-
-.markdown-section table tr td,
-.markdown-section table th {
-	border-right: 1px solid var(--col-black-50);
-}
-
-.markdown-section table {
-	border: 1px solid var(--col-black-50);
+	--navbar-menu-link-margin: 0;
+	--navbar-menu-link-padding: 0;
 }

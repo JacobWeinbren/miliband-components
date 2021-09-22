@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+`<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -9,38 +9,61 @@
             name="viewport"
             content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
         />
+        <link rel="stylesheet" href="dist/styles/theme.css" />
+        <link rel="stylesheet" href="dist/styles/docs.css" />
         <link
             rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css"
+            href="//cdn.jsdelivr.net/npm/docsify-demo@2.0.4/dist/index.min.css"
         />
-
-        <link rel="stylesheet" href="dist/styles/theme.css" />
-        <link rel="stylesheet" href="assets/styles/style.css" />
     </head>
     <body>
         <div id="app"></div>
         <script>
             window.$docsify = {
-                name: "Miliband Components Logo",
+                name: "Miliband Components",
                 repo: "https://github.com/JacobWeinbren/miliband-components",
                 auto2top: true,
                 homepage: "/get-started/overview.md",
                 loadSidebar: true,
+                loadNavbar: true,
+                alias: {
+                    "/_sidebar.md": "/get-started/_sidebar.md",
+                },
                 maxLevel: 2,
                 subMaxLevel: 2,
                 coverpage: false,
                 relativePath: true,
-                logo: "/assets/images/cover.png",
                 themeColor: "#f04c53",
                 pagination: {
                     previousText: "Previous",
                     nextText: "Next",
                 },
+                plugins: [
+                    function (hook, vm) {
+                        hook.ready(function () {
+                            //Move header
+                            const destination =
+                                document.querySelector(".app-nav");
+                            const header = document.querySelector(".app-name");
+                            destination.prepend(header);
+
+                            //Remove text
+                            const element = document.body;
+                            for (var i = 0; i < element.childNodes.length; i++) {
+                                var node = element.childNodes[i];
+                                if (node.nodeType == 3) {
+                                   node.remove();
+                                   break; 
+                                }
+                            }
+                        });
+                    },
+                ],
             };
         </script>
         <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+        <script src="//cdn.jsdelivr.net/npm/docsify-demo@2.0.4/dist/index.min.js"></script>
         <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
         <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/js/docsify-themeable.min.js"></script>
     </body>
 </html>

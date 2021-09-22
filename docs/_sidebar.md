@@ -1,3 +1,0 @@
--   Get Started
-    -   [Overview](/)
-    -   [Install](get-started/install)

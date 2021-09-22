@@ -67,18 +67,20 @@ Spacing
 $space-unit: 1ex;
 
 $spacing: (
-    "xxxxs": 0.125 * $space-unit,
+    // extra small
     "xxxs": 0.25 * $space-unit,
-    "xxs": 0.375 * $space-unit,
-    "xs": 0.5 * $space-unit,
-    "sm": 0.75 * $space-unit,
-    "md": 1 * $space-unit,
-    "lg": 1.5 * $space-unit,
-    "xl": 2 * $space-unit,
-    "xxl": 3.5 * $space-unit,
-    "xxxl": 5 * $space-unit,
-    "xxxxl": 6 * $space-unit,
-    "xxxxxl": 7 * $space-unit,
+    "xxs": 0.5 * $space-unit,
+    "xs": 0.75 * $space-unit,
+    //small
+    "sm": 1 * $space-unit,
+    //medium
+    "md": 2 * $space-unit,
+    //large
+    "lg": 3 * $space-unit,
+    //extra large
+    "xl": 4 * $space-unit,
+    "xxl": 5 * $space-unit,
+    "xxxl": 6 * $space-unit
 );
 
 /*
@@ -116,15 +118,19 @@ $breakpoints: (
 /*
 Misc
 */
-$transition-fast: all 0.25s cubic-bezier(0, 0, 0.4, 0.9) 0s, width 0s ease 0s,
-    height 0s ease 0s;
-$transition-medium: all 0.5s cubic-bezier(0, 0, 0.4, 0.9) 0s, width 0s ease 0s,
-    height 0s ease 0s;
-$transition-slow: all 1s cubic-bezier(0, 0, 0.4, 0.9) 0s, width 0s ease 0s,
-    height 0s ease 0s;
+$transition-fast: 0.25s cubic-bezier(0, 0, 0.4, 0.9);
+$transition-medium: 0.5s cubic-bezier(0, 0, 0.4, 0.9);
+$transition-slow: 1s cubic-bezier(0, 0, 0.4, 0.9);
 
 :root {
     --transition-fast: #{$transition-fast};
     --transition-medium: #{$transition-medium};
     --transition-slow: #{$transition-slow};
+    --border-radius-s: 2px;
+    --border-radius-m: 4px;
+    --border-radius-l: 8px;
+    --mono-tint1: var(--col-black-100);
+    --mono-tint2: var(--col-black-50);
+    --mono-tint3: var(--col-black-25);
+    --theme-col: var(--col-brand-500);
 }

@@ -1,8 +1,8 @@
-/* Tables */
-@use "type";
+@use "variables";
 
+/* Tables */
 :root {
-    --tb-cell-padding: var(--space-md) var(--space-sm);
+    --tb-cell-padding: var(--space-sm) var(--space-md);
     --tb-head-border-color: var(--col-black-300);
     --tb-head-font-weight: var(--text-heading-weight);
     --tb-row-odd-background: var(--col-black-25);
@@ -23,4 +23,34 @@ table {
 
 tbody tr:nth-child(odd) {
     background-color: var(--tb-row-odd-background);
+}
+
+/* Lists */
+
+ol li,
+ul li {
+    margin-bottom: var(--space-sm);
+}
+
+/* Links */
+:not(h1, h2, h3, h4, h5, h6) > a {
+    color: var(--theme-col);
+    text-decoration: underline;
+
+    &:visited {
+        color: var(--col-brand-1000);
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+    }
+}
+
+/* Keyboard */
+kbd {
+    background: var(--col-black-25);
+    border-radius: var(--border-radius-m);
+    margin: 0 var(--space-xs);
+    min-width: var(--space-md);
+    padding: var(--space-sm);
 }
