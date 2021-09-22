@@ -12,13 +12,13 @@ Colours
     @return rgb($r, $g, $b);
 }
 
+//From https://coolors.co/
 $black: #0c0c0c;
 $purple: #5438dc;
 $cyan: #008990;
 $blue: #0967ea;
 $yellow: #f9be00;
 $green: #40c057;
-$pink: #ee4b6a;
 $brand: #f04c53;
 $orange: #ff7f45;
 $white: #fff;
@@ -31,7 +31,6 @@ $colors: (
     "blue": $blue,
     "yellow": $yellow,
     "green": $green,
-    "pink": $pink,
     "brand": $brand,
     "orange": $orange,
     "bone": $bone,
@@ -57,7 +56,7 @@ $colors: (
         --col-#{$key}-900: #{color.mix($color, $baseDark, 25%)};
         --col-#{$key}-1000: #{color.mix($color, $baseDark, 8.5%)};
     }
-    --text: var(--colo-black-500);
+    --text: var(--col-black-500);
     --inverse: #{$white};
 }
 

@@ -1,4 +1,4 @@
-`<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -13,15 +13,19 @@
         <link rel="stylesheet" href="dist/styles/docs.css" />
         <link
             rel="stylesheet"
-            href="//cdn.jsdelivr.net/npm/docsify-demo@2.0.4/dist/index.min.css"
+            href="//cdn.jsdelivr.net/npm/docsify-demo@latest/dist/index.min.css"
         />
     </head>
     <body>
         <div id="app"></div>
         <script>
+            var destination = null;
+            var header = document.createElement('div');
+            header.className += "app-name";
+            header.id += "docs-header";
+            header.innerHTML = "<a class='app-name-link' href='/''><img src='../assets/images/logo.png'</a>"
+
             window.$docsify = {
-                name: "Miliband Components",
-                repo: "https://github.com/JacobWeinbren/miliband-components",
                 auto2top: true,
                 homepage: "/get-started/overview.md",
                 loadSidebar: true,
@@ -40,29 +44,48 @@
                 },
                 plugins: [
                     function (hook, vm) {
-                        hook.ready(function () {
-                            //Move header
-                            const destination =
-                                document.querySelector(".app-nav");
-                            const header = document.querySelector(".app-name");
+                        hook.ready(function() {
+                            if (document.querySelector(".app-name") != null) {
+                                destination = document.querySelector(".app-name").remove();
+                            }
+
+                            destination = document.querySelector(".app-nav");
                             destination.prepend(header);
 
                             //Remove text
                             const element = document.body;
-                            for (var i = 0; i < element.childNodes.length; i++) {
+                            for (
+                                var i = 0;
+                                i < element.childNodes.length;
+                                i++
+                            ) {
                                 var node = element.childNodes[i];
                                 if (node.nodeType == 3) {
-                                   node.remove();
-                                   break; 
+                                    node.remove();
+                                    break;
                                 }
                             }
-                        });
+
+                            //If Docsfiy Removes - add back in
+                            const observer = new MutationObserver(function(mutations_list) {
+                                mutations_list.forEach(function(mutation) {
+                                    mutation.removedNodes.forEach(function(removed_node) {
+                                        if(removed_node.id == 'docs-header') {
+                                            destination = document.querySelector(".app-nav");
+                                            destination.prepend(header);
+                                        }
+                                    });
+                                });
+                            });
+
+                            observer.observe(document.querySelector(".app-nav"), { subtree: false, childList: true });
+                        })
                     },
                 ],
             };
         </script>
         <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
-        <script src="//cdn.jsdelivr.net/npm/docsify-demo@2.0.4/dist/index.min.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/docsify-demo@latest/dist/index.min.js"></script>
         <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
         <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
     </body>

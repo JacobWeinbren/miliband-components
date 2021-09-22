@@ -5,6 +5,8 @@
 
 <img width="150px" src="assets/images/cover.png" />
 
+<br />
+
 -   Responsive for mobile devices 📱
 -   Built from the ground up for accessibility support ♿
 -   Components built using [Lit.Dev](https://lit.dev/), improving performance 🚀
