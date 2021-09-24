@@ -10,33 +10,23 @@ export class MiliButton extends LitElement {
             font-family: var(--font);
         }
         a {
-            box-sizing: border-box;
-            max-width: 20rem;
-            min-height: 3rem;
-            font-size: 1rem;
-            word-break: break-all;
-            transition: var(--transition);
+            border-radius: 17px;
+            border: 2px solid var(--text);
+            white-space: nowrap;
+            padding: var(--space-xxs) var(--space-sm);
+            font-weight: var(--text-heading-weight);
+            font-size: var(--text-xs);
             cursor: pointer;
-            padding: 0.87rem 1rem;
-            text-align: center;
-            line-height: 1.5;
+        }
+        a:hover {
+            color: var(--col-brand-500);
+            border-color: var(--col-brand-500);
         }
         .light {
-            color: var(--primary);
-            border: 1px solid var(--primary);
-            background: var(--inverse);
         }
         .dark {
-            color: var(--inverse);
-            background: var(--primary);
         }
     `;
-
-    @property()
-    text = "Button";
-
-    @property()
-    kind = "Light";
 
     @property()
     icon = false;

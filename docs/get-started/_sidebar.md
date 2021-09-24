@@ -1,2 +1,0 @@
--   [Overview](/)
--   [Install](/get-started/install)

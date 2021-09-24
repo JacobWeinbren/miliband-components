@@ -46,6 +46,19 @@ ul li {
     }
 }
 
+a {
+    &:active {
+        outline: 0;
+    }
+}
+
+/* Focus */
+*:focus {
+    outline: 0;
+    border-radius: 4px;
+    box-shadow: 0 0 0 2px rgba(59, 153, 252, 0.7);
+}
+
 /* Keyboard */
 kbd {
     background: var(--col-black-25);

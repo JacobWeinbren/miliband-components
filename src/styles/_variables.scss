@@ -63,7 +63,7 @@ $colors: (
 /*
 Spacing
 */
-$space-unit: 1ex;
+$space-unit: 1em;
 
 $spacing: (
     // extra small
@@ -73,13 +73,13 @@ $spacing: (
     //small
     "sm": 1 * $space-unit,
     //medium
-    "md": 2 * $space-unit,
+    "md": 1.5 * $space-unit,
     //large
-    "lg": 3 * $space-unit,
+    "lg": 2 * $space-unit,
     //extra large
-    "xl": 4 * $space-unit,
-    "xxl": 5 * $space-unit,
-    "xxxl": 6 * $space-unit
+    "xl": 3 * $space-unit,
+    "xxl": 4 * $space-unit,
+    "xxxl": 5 * $space-unit
 );
 
 /*
@@ -117,9 +117,9 @@ $breakpoints: (
 /*
 Misc
 */
-$transition-fast: 0.25s cubic-bezier(0, 0, 0.4, 0.9);
-$transition-medium: 0.5s cubic-bezier(0, 0, 0.4, 0.9);
-$transition-slow: 1s cubic-bezier(0, 0, 0.4, 0.9);
+$transition-fast: 0.1s ease-in-out;
+$transition-medium: 0.2s ease-in-out;
+$transition-slow: 0.4s ease-in-out;
 
 :root {
     --transition-fast: #{$transition-fast};

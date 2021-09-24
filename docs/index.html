@@ -19,38 +19,42 @@
     <body>
         <div id="app"></div>
         <script>
-            var destination = null;
-            var header = document.createElement('div');
-            header.className += "app-name";
-            header.id += "docs-header";
-            header.innerHTML = "<a class='app-name-link' href='/''><img src='../assets/images/logo.png'</a>"
+            //Logo
+            var logo = document.createElement("div");
+            logo.className += "app-name";
+            logo.id += "docs-logo";
+            logo.innerHTML =
+                "<a class='app-name-link' href='/''><img src='../assets/images/logo.png'</a>";
+
+            //Mob Menu
+            var menu = document.createElement("div");
+            menu.id += "docs-menu";
+            menu.innerHTML = "<mili-button>Get Started</mili-button>";
 
             window.$docsify = {
                 auto2top: true,
                 homepage: "/get-started/overview.md",
-                loadSidebar: true,
+                loadSidebar: false,
                 loadNavbar: true,
                 alias: {
-                    "/_sidebar.md": "/get-started/_sidebar.md",
+                   '/.*/_navbar.md': '/_navbar.md', // See #301
                 },
                 maxLevel: 2,
                 subMaxLevel: 2,
                 coverpage: false,
                 relativePath: true,
-                themeColor: "#f04c53",
-                pagination: {
-                    previousText: "Previous",
-                    nextText: "Next",
-                },
                 plugins: [
                     function (hook, vm) {
-                        hook.ready(function() {
+                        hook.ready(function () {
                             if (document.querySelector(".app-name") != null) {
-                                destination = document.querySelector(".app-name").remove();
+                                destination = document
+                                    .querySelector(".app-name")
+                                    .remove();
                             }
 
-                            destination = document.querySelector(".app-nav");
-                            destination.prepend(header);
+                            header = document.querySelector(".app-nav");
+                            header.prepend(logo);
+                            header.append(menu);
 
                             //Remove text
                             const element = document.body;
@@ -67,26 +71,44 @@
                             }
 
                             //If Docsfiy Removes - add back in
-                            const observer = new MutationObserver(function(mutations_list) {
-                                mutations_list.forEach(function(mutation) {
-                                    mutation.removedNodes.forEach(function(removed_node) {
-                                        if(removed_node.id == 'docs-header') {
-                                            destination = document.querySelector(".app-nav");
-                                            destination.prepend(header);
+                            const observer = new MutationObserver(function (
+                                mutations_list
+                            ) {
+                                mutations_list.forEach(function (mutation) {
+                                    mutation.removedNodes.forEach(function (
+                                        removed_node
+                                    ) {
+                                        if (removed_node.id == "docs-logo") {
+                                            header =
+                                                document.querySelector(
+                                                    ".app-nav"
+                                                );
+                                            header.prepend(logo);
+                                        }
+                                        if (removed_node.id == "docs-menu") {
+                                            header =
+                                                document.querySelector(
+                                                    ".app-nav"
+                                                );
+                                            header.append(menu);
                                         }
                                     });
                                 });
                             });
 
-                            observer.observe(document.querySelector(".app-nav"), { subtree: false, childList: true });
-                        })
+                            observer.observe(
+                                document.querySelector(".app-nav"),
+                                { subtree: false, childList: true }
+                            );
+                        });
                     },
                 ],
             };
         </script>
+        <script type="module" src="dist/index.js"></script>
+        <!-- Docsify Librarie s-->
         <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
         <script src="//cdn.jsdelivr.net/npm/docsify-demo@latest/dist/index.min.js"></script>
         <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
-        <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
     </body>
 </html>

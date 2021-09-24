@@ -49,17 +49,28 @@ export default [
             babel({
                 babelHelpers: "bundled",
                 babelrc: false,
-                ...{
-                    presets: [
-                        [
-                            "@babel/preset-env",
-                            {
-                                useBuiltIns: "entry",
-                                corejs: "3.8",
+                exclude: "node_modules/**",
+                presets: [
+                    [
+                        "@babel/preset-env",
+                        {
+                            targets: {
+                                browsers: ["> 1%", "last 2 versions"],
                             },
-                        ],
+                            useBuiltIns: "usage",
+                            corejs: 3.8,
+                        },
                     ],
-                },
+                ],
+                plugins: [
+                    "@babel/plugin-syntax-dynamic-import",
+                    [
+                        "@babel/plugin-transform-runtime",
+                        {
+                            useESModules: true,
+                        },
+                    ],
+                ],
             }),
             //Main functions
             resolve(),
