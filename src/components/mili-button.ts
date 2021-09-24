@@ -22,6 +22,10 @@ export class MiliButton extends LitElement {
             color: var(--col-brand-500);
             border-color: var(--col-brand-500);
         }
+        a:active {
+            outline: 0;
+            box-shadow: 0 0 0 2px rgba(59, 153, 252, 0.7);
+        }
         .light {
         }
         .dark {

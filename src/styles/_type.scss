@@ -1,40 +1,17 @@
 @use "sass:math";
 @use "variables";
+@use "font";
 
 /* https://medium.com/codyhouse/create-your-design-system-part-1-typography-7c630d9092bd */
 /* https://codyhouse.co/ds/docs/framework/typography */
-$font: "Fira Sans", Helvetica, Arial, sans-serif;
+$font: "Poppins", Helvetica, Arial, sans-serif;
 $base-size: 1.12em;
 $base-weight: 400;
-$heading-weight: 600;
+$heading-weight: 500;
 $heading-line-height: var(--space-lg);
 $body-line-height: var(--space-lg);
 $letter-spacing: 0;
 $word-spacing: 0;
-
-/* With thanks to https://google-webfonts-helper.herokuapp.com/ */
-/* fira-sans-regular - latin */
-@font-face {
-    font-family: "Fira Sans";
-    font-style: normal;
-    font-weight: #{$base-weight};
-    src: url("../assets/fonts/fira-sans-v11-latin/fira-sans-v11-latin-regular.eot"); /* IE9 Compat Modes */
-    src: local(""),
-        url("../assets/fonts/fira-sans-v11-latin/fira-sans-v11-latin-regular.eot?#iefix")
-            format("embedded-opentype"),
-        /* IE6-IE8 */
-            url("../assets/fonts/fira-sans-v11-latin/fira-sans-v11-latin-regular.woff2")
-            format("woff2"),
-        /* Super Modern Browsers */
-            url("../assets/fonts/fira-sans-v11-latin/fira-sans-v11-latin-regular.woff")
-            format("woff"),
-        /* Modern Browsers */
-            url("../assets/fonts/fira-sans-v11-latin/fira-sans-v11-latin-regular.ttf")
-            format("truetype"),
-        /* Safari, Android, iOS */
-            url("../assets/fonts/fira-sans-v11-latin/fira-sans-v11-latin-regular.svg#FiraSans")
-            format("svg"); /* Legacy iOS */
-}
 
 :root {
     --font: #{$font};
@@ -47,17 +24,14 @@ $word-spacing: 0;
     --word-spacing: #{$word-spacing};
     --letter-spacing: #{$letter-spacing};
 
+    --text-xxs: #{$base-size * 0.65};
     --text-xs: #{$base-size * 0.75};
     --text-sm: #{$base-size};
     --text-md: #{$base-size * 1.5};
     --text-lg: #{$base-size * 1.75};
     --text-xl: #{$base-size * 2};
     --text-xxl: #{$base-size * 2.5};
-}
-
-/* Selection Colour */
-::selection {
-    background: var(--col-black-50);
+    --text-xxxl: #{$base-size * 3};
 }
 
 /* Applies Text Size */
@@ -72,26 +46,26 @@ body {
 
 h1 {
     font-size: var(--text-xxl);
-    line-height: calc(1ex / 0.42);
-    margin: calc(1ex / 0.42) 0;
+    line-height: calc(1ex / 0.52);
+    margin-bottom: calc(1ex / 0.52);
 }
 
 h2 {
     font-size: var(--text-xl);
-    line-height: calc(1ex / 0.42);
-    margin: calc(1ex / 0.42) 0;
+    line-height: calc(1ex / 0.52);
+    margin-bottom: calc(1ex / 0.52);
 }
 
 h3 {
     font-size: var(--text-lg);
-    line-height: calc(1ex / 0.38);
-    margin: calc(1ex / 0.38) 0;
+    line-height: calc(1ex / 0.48);
+    margin-bottom: calc(1ex / 0.48);
 }
 
 h4 {
     font-size: var(--text-md);
-    line-height: calc(1ex / 0.38);
-    margin: calc(1ex / 0.38) 0;
+    line-height: calc(1ex / 0.48);
+    margin-bottom: calc(1ex / 0.48);
 }
 
 p,
@@ -101,8 +75,8 @@ i,
 b {
     display: block;
     font-size: var(--text-sm);
-    line-height: calc(1ex / 0.32);
-    margin: calc(1ex / 0.32) 0;
+    line-height: calc(1ex / 0.42);
+    margin-bottom: calc(1ex / 0.42);
 }
 
 p {
@@ -114,12 +88,11 @@ h5,
 small,
 h6 {
     font-size: var(--text-xs);
-    line-height: calc(1ex / 0.32);
-    margin: calc(1ex / 0.32) 0;
+    line-height: calc(1ex / 0.42);
+    margin-bottom: calc(1ex / 0.42);
 }
 
-strong {
-    color: var(--col-black-400);
+strong f {
     font-weight: var(--text-heading-weight);
 }
 
@@ -129,7 +102,6 @@ h3,
 h4,
 h5,
 h6 {
-    color: var(--col-black-400);
     font-weight: var(--text-heading-weight);
 
     a {

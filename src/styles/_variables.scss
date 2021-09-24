@@ -55,6 +55,9 @@ $colors: (
         --col-#{$key}-800: #{color.mix($color, $baseDark, 54%)};
         --col-#{$key}-900: #{color.mix($color, $baseDark, 25%)};
         --col-#{$key}-1000: #{color.mix($color, $baseDark, 8.5%)};
+        .background-#{$key} {
+            background-color: var(--col-#{$key}-500);
+        }
     }
     --text: var(--col-black-500);
     --inverse: #{$white};
@@ -79,7 +82,9 @@ $spacing: (
     //extra large
     "xl": 3 * $space-unit,
     "xxl": 4 * $space-unit,
-    "xxxl": 5 * $space-unit
+    "xxxl": 5 * $space-unit,
+    "xxxxl": 6 * $space-unit,
+    "xxxxxxl": 7 * $space-unit
 );
 
 /*

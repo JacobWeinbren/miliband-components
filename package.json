@@ -22,6 +22,10 @@
         "semi": true,
         "singleQuote": false
     },
+    "browserslist": [
+        "> 1%",
+        "last 2 versions"
+    ],
     "author": "Jacob",
     "license": "MIT",
     "dependencies": {
