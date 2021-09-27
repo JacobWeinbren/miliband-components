@@ -10,18 +10,16 @@
 	align-items: center;
 	height: var(--space-xxxl);
 	padding: var(--space-md) 0;
-	background: var(--inverse);
 	margin: 0 var(--space-md);
+	background: var(--inverse);
 
 	.app-name {
-		height: 100%;
 		display: flex;
-		align-items: center;
-		margin-right: var(--space-lg);
+		margin-right: var(--space-md);
 		a {
+			padding: 0;
 			display: flex;
 			align-items: center;
-			height: var(--space-lg);
 			img {
 				height: var(--space-md);
 			}
@@ -34,29 +32,31 @@
 
 	ul {
 		list-style-type: none;
-		display: flex;
 		width: 100%;
 		margin: 0;
 		padding: 0;
+		height: 100%;
+		display: flex;
+		align-items: center;
 
 		li {
-			margin: 0 var(--space-md) 0 0;
-			padding: 0 0 2px 0;
+			margin: auto var(--space-xxs) 0 var(--space-xxs);
+			display: flex;
+			flex-direction: column;
+
+			&:last-child {
+				margin-right: 0;
+			}
 
 			a {
-				padding: 0 0 3px 0;
+				&:hover {
+					color: var(--col-brand-500);
+				}
+
 				text-decoration: none;
 				color: var(--text);
 				font-size: var(--text-xxs);
 				font-weight: var(--text-heading-weight);
-
-				&.active {
-					border-bottom: 1px solid var(--text);
-				}
-
-				&:hover {
-					color: var(--col-brand-500);
-				}
 			}
 		}
 	}

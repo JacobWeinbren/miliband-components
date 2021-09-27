@@ -5,6 +5,7 @@ import autoprefixer from "autoprefixer";
 import copy from "rollup-plugin-copy";
 import babel from "@rollup/plugin-babel";
 import esbuild from "rollup-plugin-esbuild";
+import postcssLit from "rollup-plugin-postcss-lit";
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -37,6 +38,7 @@ export default [
         input: {
             index: "src/index.ts",
             "components/mili-button": "src/components/mili-button.ts",
+            "components/mili-nav": "src/components/mili-nav.ts",
         },
         output: {
             dir: "dist",
@@ -70,6 +72,12 @@ export default [
                 ],
             }),
             //Main functions
+            postcss({
+                minimize: true,
+                plugins: [autoprefixer()],
+                inject: false,
+            }),
+            postcssLit(),
             resolve(),
             copy({
                 targets: [{ src: "src/assets", dest: "dist" }],
