@@ -14,8 +14,10 @@ yarn build
 For the docs, run the following
 
 ```bash
+cd docs
 ln -s ../dist
-yarn run start
+cd ../
+yarn start
 ```
 
 ## Production
