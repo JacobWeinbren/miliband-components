@@ -1,0 +1,15 @@
+:host {
+    font-family: var(--font);
+    width: 50px;
+}
+
+a {
+    &:hover {
+        color: var(--col-brand-500);
+    }
+
+    text-decoration: none;
+    color: var(--text);
+    font-size: var(--text-xxs);
+    font-weight: var(--text-heading-weight);
+}

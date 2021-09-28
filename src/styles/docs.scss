@@ -1,65 +1,6 @@
 /* Github Corner Icon */
-
 .github-corner {
 	display: none;
-}
-
-/* Header */
-.app-nav {
-	display: flex;
-	align-items: center;
-	height: var(--space-xxxl);
-	padding: var(--space-md) 0;
-	margin: 0 var(--space-md);
-	background: var(--inverse);
-
-	.app-name {
-		display: flex;
-		margin-right: var(--space-md);
-		a {
-			padding: 0;
-			display: flex;
-			align-items: center;
-			img {
-				height: var(--space-md);
-			}
-		}
-	}
-
-	#docs-menu {
-		margin-right: var(--space-lg);
-	}
-
-	ul {
-		list-style-type: none;
-		width: 100%;
-		margin: 0;
-		padding: 0;
-		height: 100%;
-		display: flex;
-		align-items: center;
-
-		li {
-			margin: auto var(--space-xxs) 0 var(--space-xxs);
-			display: flex;
-			flex-direction: column;
-
-			&:last-child {
-				margin-right: 0;
-			}
-
-			a {
-				&:hover {
-					color: var(--col-brand-500);
-				}
-
-				text-decoration: none;
-				color: var(--text);
-				font-size: var(--text-xxs);
-				font-weight: var(--text-heading-weight);
-			}
-		}
-	}
 }
 
 /* Sidebar */

@@ -21,7 +21,7 @@ export class MiliButton extends LitElement {
     }
 
     render() {
-        return html` <a role="button">
+        return html`<a role="button">
             <slot></slot>
             ${this.getIcon()}
         </a>`;

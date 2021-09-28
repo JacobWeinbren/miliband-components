@@ -20,86 +20,28 @@
         <div id="app"></div>
         <script>
             //Logo
-            var logo = document.createElement("div");
-            logo.className += "app-name";
-            logo.id += "docs-logo";
-            logo.innerHTML =
-                "<a class='app-name-link' href='/''><img src='dist/assets/images/logo.png'/></a>";
-
-            //Mob Menu
-            var menu = document.createElement("div");
-            menu.id += "docs-menu";
-            menu.innerHTML = "<mili-button>Get Started</mili-button>";
+            var nav = document.createElement("mili-nav");
+            nav.id = "nav";
+            nav.innerHTML = `
+                <mili-nav-item href="/#/get-started/install" name="Get Started"></mili-nav-item>
+                <mili-nav-item href="/" name="Styles"></mili-nav-item>
+                <mili-nav-item href="/" name="Components"></mili-nav-item>
+                <mili-nav-item href="/" name="Utilities"></mili-nav-item>
+                <mili-nav-item href="/" name="Resources"></mili-nav-item>
+            `
 
             window.$docsify = {
                 auto2top: true,
                 homepage: "/get-started/overview.md",
-                loadSidebar: false,
-                loadNavbar: true,
-                alias: {
-                   '/.*/_navbar.md': '/_navbar.md',
-                },
                 maxLevel: 2,
                 subMaxLevel: 2,
                 coverpage: false,
                 relativePath: true,
                 plugins: [
                     function (hook, vm) {
-                        hook.ready(function () {
-                            if (document.querySelector(".app-name") != null) {
-                                destination = document
-                                    .querySelector(".app-name")
-                                    .remove();
-                            }
-
-                            header = document.querySelector(".app-nav");
-                            header.prepend(logo);
-                            header.append(menu);
-
-                            //Remove text
-                            const element = document.body;
-                            for (
-                                var i = 0;
-                                i < element.childNodes.length;
-                                i++
-                            ) {
-                                var node = element.childNodes[i];
-                                if (node.nodeType == 3) {
-                                    node.remove();
-                                    break;
-                                }
-                            }
-
-                            //If Docsfiy Removes - add back in
-                            const observer = new MutationObserver(function (
-                                mutations_list
-                            ) {
-                                mutations_list.forEach(function (mutation) {
-                                    mutation.removedNodes.forEach(function (
-                                        removed_node
-                                    ) {
-                                        if (removed_node.id == "docs-logo") {
-                                            header =
-                                                document.querySelector(
-                                                    ".app-nav"
-                                                );
-                                            header.prepend(logo);
-                                        }
-                                        if (removed_node.id == "docs-menu") {
-                                            header =
-                                                document.querySelector(
-                                                    ".app-nav"
-                                                );
-                                            header.append(menu);
-                                        }
-                                    });
-                                });
-                            });
-
-                            observer.observe(
-                                document.querySelector(".app-nav"),
-                                { subtree: false, childList: true }
-                            );
+                        hook.doneEach(function () {
+                            header = document.querySelector(".content");
+                            header.prepend(nav);
                         });
                     },
                 ],

@@ -6,6 +6,7 @@ import copy from "rollup-plugin-copy";
 import babel from "@rollup/plugin-babel";
 import esbuild from "rollup-plugin-esbuild";
 import postcssLit from "rollup-plugin-postcss-lit";
+import image from "@rollup/plugin-image";
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -39,6 +40,7 @@ export default [
             index: "src/index.ts",
             "components/mili-button": "src/components/mili-button.ts",
             "components/mili-nav": "src/components/mili-nav.ts",
+            "components/mili-nav-item": "src/components/mili-nav-item.ts",
         },
         output: {
             dir: "dist",
@@ -78,6 +80,7 @@ export default [
                 inject: false,
             }),
             postcssLit(),
+            image(),
             resolve(),
             copy({
                 targets: [{ src: "src/assets", dest: "dist" }],
