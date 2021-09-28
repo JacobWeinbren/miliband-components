@@ -40,7 +40,7 @@
                 plugins: [
                     function (hook, vm) {
                         hook.doneEach(function () {
-                            header = document.querySelector(".content");
+                            header = document.querySelector("main");
                             header.prepend(nav);
                         });
                     },

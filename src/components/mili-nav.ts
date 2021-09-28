@@ -11,8 +11,8 @@ export class MiliNav extends LitElement {
 
     render() {
         return html`<nav>
-            <img src="${logo}" />
-            <slot></slot>
+            <a href="/"><img src="${logo}" /></a>
+            <slot class="left"></slot>
             <slot name="right"></slot>
         </nav>`;
     }

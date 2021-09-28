@@ -1,19 +1,23 @@
-:host {
-    font-family: var(--font);
+nav {
     display: flex;
     align-items: center;
     height: var(--space-xxxl);
     padding: var(--space-md) 0;
     margin: 0 var(--space-md);
     background: var(--inverse);
+    box-sizing: border-box;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    margin-top: auto;
 }
 
 a {
-    padding: 0;
     display: flex;
-    align-items: center;
-}
-
-img {
-    height: var(--space-md);
+    margin-right: var(--space-md);
+    img {
+        height: var(--space-md);
+    }
 }
