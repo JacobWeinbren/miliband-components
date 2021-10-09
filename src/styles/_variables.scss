@@ -1,10 +1,11 @@
 @use "sass:math";
 @use "sass:color";
-@use "functions" as f;
+@use "sass:map";
 
 /*
 Colours
 */
+
 //From https://sparagino.it/2020/06/09/sass-only-material-angular-palette-generator/
 @function multiply($rgb1, $rgb2) {
     $r: math.floor(math.div(red($rgb1) * red($rgb2), 255));
@@ -24,7 +25,7 @@ $brand: #f04c53;
 $orange: #ff8f00;
 $white: #fff;
 
-$colors: (
+$colours: (
     "black": $black,
     "purple": $purple,
     "pink": $pink,
@@ -35,36 +36,76 @@ $colors: (
     "orange": $orange,
 );
 
-:root {
-    @each $key, $color in $colors {
-        $white: #fff;
-        $black: #000;
-        $baseDark: multiply($color, $color);
-        @if $key == "black" {
-            --col-#{$key}-25: #{color.mix($color, $white, 3%)};
-        }
-        --col-#{$key}-50: #{color.mix($color, $white, 12%)};
-        --col-#{$key}-100: #{color.mix($color, $white, 30%)};
-        --col-#{$key}-200: #{color.mix($color, $white, 50%)};
-        --col-#{$key}-300: #{color.mix($color, $white, 70%)};
-        --col-#{$key}-400: #{color.mix($color, $white, 85%)};
-        --col-#{$key}-500: #{color.mix($color, $white, 100%)};
-        --col-#{$key}-600: #{color.mix($color, $baseDark, 87%)};
-        --col-#{$key}-700: #{color.mix($color, $baseDark, 70%)};
-        --col-#{$key}-800: #{color.mix($color, $baseDark, 54%)};
-        --col-#{$key}-900: #{color.mix($color, $baseDark, 25%)};
-        --col-#{$key}-1000: #{color.mix($color, $baseDark, 8.5%)};
-        .background-#{$key} {
-            background-color: var(--col-#{$key}-500);
-        }
+//Generates colour array
+$white-pure: #fff;
+$black-pure: #000;
+
+$colour-key: (
+    25: 3%,
+    50: 12%,
+    100: 30%,
+    200: 50%,
+    300: 70%,
+    400: 85%,
+    500: 100%,
+    600: 87%,
+    700: 70%,
+    800: 54%,
+    900: 25%,
+    1000: 8.5%,
+);
+
+@function col($colour, $multiply: 500) {
+    $baseDark: multiply($colour, $colour);
+
+    @if $multiply <=500 {
+        @return color.mix(
+            $colour,
+            $white-pure,
+            map.get($colour-key, $multiply)
+        );
+    } @else {
+        @return color.mix($colour, $baseDark, map.get($colour-key, $multiply));
     }
-    --text: var(--col-black-500);
-    --inverse: #{$white};
+}
+
+//Colour defaults
+$mono-tint1: col($black, 100);
+$mono-tint2: col($black, 50);
+$mono-tint3: col($black, 25);
+$theme-col: col($brand);
+
+/*
+Spacing
+*/
+
+//Sets base value for spacing
+$space-unit: 1rem;
+
+$space-def: (
+    // extra small
+    "xs": 0.5,
+    //small
+    "sm": 1,
+    //medium
+    "md": 1.5,
+    //large
+    "lg": 2,
+    //extra large
+    "xl": 2.5,
+    "xxl": 3,
+    "xxxl": 3.5,
+    "xxxxl": 4
+);
+
+@function space($level, $multiply: 1) {
+    @return $multiply * map.get($space-def, $level) * $space-unit;
 }
 
 /*
 Breakpoints
 */
+
 $breakpoints: (
     //32
     "xs": space("xxxxl", 8),
@@ -78,8 +119,8 @@ $breakpoints: (
     "xl": space("xxxxl", 23)
 );
 
-/* https://css-tricks.com/snippets/sass/mixin-manage-breakpoints/ */
-/* https://medium.com/codyhouse/create-your-design-system-part-4-spacing-895c9213e2b9 */
+//https://css-tricks.com/snippets/sass/mixin-manage-breakpoints/
+//https://medium.com/codyhouse/create-your-design-system-part-4-spacing-895c9213e2b9/
 @mixin breakpoint($breakpoint) {
     @if map-has-key($breakpoints, $breakpoint) {
         @media (min-width: map-get($breakpoints, $breakpoint)) {
@@ -92,21 +133,17 @@ $breakpoints: (
 }
 
 /*
-Misc
+Transition
 */
+
 $transition-fast: 0.1s ease-in-out;
 $transition-medium: 0.2s ease-in-out;
 $transition-slow: 0.4s ease-in-out;
 
-:root {
-    --transition-fast: #{$transition-fast};
-    --transition-medium: #{$transition-medium};
-    --transition-slow: #{$transition-slow};
-    --border-radius-s: 2px;
-    --border-radius-m: 4px;
-    --border-radius-l: 8px;
-    --mono-tint1: var(--col-black-100);
-    --mono-tint2: var(--col-black-50);
-    --mono-tint3: var(--col-black-25);
-    --theme-col: var(--col-brand-500);
-}
+/*
+Border
+*/
+
+$border-radius-s: 2px;
+$border-radius-m: 4px;
+$border-radius-l: 8px;

@@ -1,25 +1,30 @@
-@use '../functions' as f;
+@use "../variables" as *;
+@use "../type" as *;
 
 nav {
-    max-width: f.space("xxxxl", 23);
-    padding: f.space("sm") auto;
+    max-width: space("xxxxl", 23);
+    margin: 0 auto;
+    padding: space("sm") space("lg");
     display: flex;
-    align-items: center;
-    background: var(--inverse);
+    background: $inverse;
     box-sizing: border-box;
+
+    & > a,
+    div {
+        padding: space("lg") 0;
+    }
 
     .left,
     .right {
         & {
             display: flex;
-            align-items: center;
             margin-top: auto;
         }
     }
-}
 
-a {
-    img {
-        height: f.space("sm", 2);
+    .logo {
+        img {
+            height: space("sm", 2);
+        }
     }
 }

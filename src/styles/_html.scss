@@ -1,5 +1,5 @@
-@use "functions" as f;
+@use "variables" as *;
 
 .content {
-	margin: 0 f.space("md");
+	margin: 0 space("md");
 }

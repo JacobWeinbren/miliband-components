@@ -7,7 +7,7 @@
         "build": "rollup -c",
         "clear": "if [ -d docs/dist ]; then rm -Rf docs/dist; fi;",
         "postbuild": "yarn clear; cp -R dist docs/dist",
-        "predev": "yarn clear; cd docs; ln -s ../dist; cd ../",
+        "predev": "yarn clear; if ! [ -L docs/dist ]; then cd docs; ln -s ../dist; cd ../; fi;",
         "dev": "rollup -c -w",
         "serve": "docsify serve ./docs"
     },

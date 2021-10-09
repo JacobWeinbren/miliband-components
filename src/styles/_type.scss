@@ -1,77 +1,74 @@
 @use "sass:math";
-@use "variables";
+@use "variables" as *;
 @use "font";
 
 /* https://medium.com/codyhouse/create-your-design-system-part-1-typography-7c630d9092bd */
 /* https://codyhouse.co/ds/docs/framework/typography */
 $font: "Poppins", Helvetica, Arial, sans-serif;
+$text: col($black);
+$inverse: $white-pure;
 $base-size: 1em;
 $base-weight: 400;
 $heading-weight: 600;
 
-:root {
-    --font: #{$font};
-    --text-base-size: #{$base-size};
-    --text-base-weight: #{$base-weight};
-    --text-heading-weight: #{$heading-weight};
+/* Creates Text Size */
+$text-xs: #{$base-size * 0.75};
+$text-sm: #{$base-size};
+$text-md: #{$base-size * 1.5};
+$text-lg: #{$base-size * 1.75};
+$text-xl: #{$base-size * 2};
+$text-xxl: #{$base-size * 2.5};
 
-    --text-xs: #{$base-size * 0.75};
-    --text-sm: #{$base-size};
-    --text-md: #{$base-size * 1.5};
-    --text-lg: #{$base-size * 1.75};
-    --text-xl: #{$base-size * 2};
-    --text-xxl: #{$base-size * 2.5};
-
-    --line-sm: calc(1ex / 0.42);
-    --line-md: calc(1ex / 0.48);
-    --line-lg: calc(1ex / 0.52);
-}
+/* Creates Line Size */
+$line-sm: calc(1ex / 0.42);
+$line-md: calc(1ex / 0.48);
+$line-lg: calc(1ex / 0.52);
 
 /* Applies Text Size */
 /* https://www.smashingmagazine.com/2020/07/css-techniques-legibility/ */
 body {
-    font-size: var(--text-sm);
-    font-family: var(--font);
-    color: var(--text);
-    background: var(--inverse);
+    font-size: $text-sm;
+    font-family: $font;
+    color: $text;
+    background: $inverse;
+    font-weight: $base-weight;
 }
 
 h1 {
-    font-size: var(--text-xxl);
-    line-height: var(--line-lg);
-    margin-bottom: var(--line-lg);
+    font-size: $text-xxl;
+    line-height: $line-lg;
+    margin-bottom: $line-lg;
 }
 
 h2 {
-    font-size: var(--text-xl);
-    line-height: var(--line-lg);
-    margin-bottom: var(--line-lg);
+    font-size: $text-xl;
+    line-height: $line-lg;
+    margin-bottom: $line-lg;
 }
 
 h3 {
-    font-size: var(--text-lg);
-    line-height: var(--line-md);
-    margin-bottom: var(--line-md);
+    font-size: $text-lg;
+    line-height: $line-md;
+    margin-bottom: $line-md;
 }
 
 h4 {
-    font-size: var(--text-md);
-    line-height: var(--line-md);
-    margin-bottom: var(--line-md);
+    font-size: $text-md;
+    line-height: $line-md;
+    margin-bottom: $line-md;
 }
 
 p,
 ol,
-ul,
-i,
-b {
-    display: block;
-    font-size: var(--text-sm);
-    line-height: var(--line-sm);
-    margin-bottom: var(--line-sm);
+ul {
+    font-size: $text-sm;
+    line-height: $line-sm;
+    margin-bottom: $line-sm;
 }
 
-p {
+p,
+em,
+strong {
     width: 60ch;
     max-width: 100%;
 }
@@ -79,13 +76,13 @@ p {
 h5,
 small,
 h6 {
-    font-size: var(--text-xs);
-    line-height: var(--line-sm);
-    margin-bottom: var(--line-sm);
+    font-size: $text-xs;
+    line-height: $line-sm;
+    margin-bottom: $line-sm;
 }
 
-strong f {
-    font-weight: var(--text-heading-weight);
+strong {
+    font-weight: $heading-weight;
 }
 
 h1,
@@ -94,17 +91,12 @@ h3,
 h4,
 h5,
 h6 {
-    font-weight: var(--text-heading-weight);
+    font-weight: $heading-weight;
 
     a {
-        color: var(--col-black-400);
+        color: col($black, 400);
         text-decoration: none;
         cursor: pointer;
-
-        &:hover {
-            text-decoration: underline;
-            text-decoration-color: var(--col-brand-900);
-        }
     }
 }
 
