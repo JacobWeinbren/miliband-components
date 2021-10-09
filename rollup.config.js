@@ -11,6 +11,7 @@ import image from "@rollup/plugin-image";
 //JS
 import babel from "@rollup/plugin-babel";
 import esbuild from "rollup-plugin-esbuild";
+import { terser } from "rollup-plugin-terser";
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -59,9 +60,9 @@ export default [
             }),
             //Main functions
             postcss({
-                minimize: production,
                 plugins: [autoprefixer],
                 inject: false,
+                minimize: production,
             }),
             postcssLit(),
             image(),
@@ -69,9 +70,8 @@ export default [
             copy({
                 targets: [{ src: "src/assets", dest: "dist" }],
             }),
-            esbuild({
-                minify: production,
-            }),
+            esbuild(),
+            production && terser(),
         ],
     },
 ];

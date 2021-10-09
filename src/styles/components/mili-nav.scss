@@ -2,19 +2,20 @@
 
 nav {
     max-width: f.space("xxxxl", 23);
-    margin: auto 0;
-    padding-top: f.space("sm");
+    padding: f.space("sm") auto;
+    padding: 20px;
     display: flex;
     align-items: center;
     background: var(--inverse);
     box-sizing: border-box;
 
     .left,
-    .right,
-    .logo {
-        display: flex;
-        align-items: center;
-        margin-top: auto;
+    .right {
+        & {
+            display: flex;
+            align-items: center;
+            margin-top: auto;
+        }
     }
 }
 
