@@ -14,9 +14,6 @@ yarn build
 For the docs, run the following
 
 ```bash
-cd docs
-ln -s ../dist
-cd ../
 yarn start
 ```
 
