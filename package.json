@@ -5,7 +5,8 @@
     "main": "index.js",
     "scripts": {
         "build": "rollup -c",
-        "postbuild": "cd docs; ln -s ../dist; cd ../",
+        "postbuild": "if [ -d docs/dist ]; then rm -Rf docs/dist; fi; cp -R dist docs/dist",
+        "predev": "if [ -d docs/dist ]; then rm -Rf docs/dist; fi; cd docs; ln -s ../dist; cd ../",
         "dev": "rollup -c -w",
         "serve": "docsify serve ./docs"
     },
