@@ -1,12 +1,16 @@
+//SYS
 import resolve from "@rollup/plugin-node-resolve";
-import commonjs from "@rollup/plugin-commonjs";
+import copy from "rollup-plugin-copy";
+
+//CSS
 import postcss from "rollup-plugin-postcss";
 import autoprefixer from "autoprefixer";
-import copy from "rollup-plugin-copy";
-import babel from "@rollup/plugin-babel";
-import esbuild from "rollup-plugin-esbuild";
 import postcssLit from "rollup-plugin-postcss-lit";
 import image from "@rollup/plugin-image";
+
+//JS
+import babel from "@rollup/plugin-babel";
+import esbuild from "rollup-plugin-esbuild";
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -21,8 +25,8 @@ function model_css(input, output) {
             postcss({
                 modules: false,
                 extract: true,
-                minimize: true,
-                plugins: [autoprefixer()],
+                minimize: production,
+                plugins: [autoprefixer],
             }),
         ],
         onwarn(warning, warn) {
@@ -49,34 +53,14 @@ export default [
         },
         plugins: [
             //Backwards compatibility
-            commonjs(),
             babel({
                 babelHelpers: "bundled",
-                babelrc: false,
                 exclude: "node_modules/**",
-                presets: [
-                    [
-                        "@babel/preset-env",
-                        {
-                            useBuiltIns: "usage",
-                            corejs: 3.8,
-                        },
-                    ],
-                ],
-                plugins: [
-                    "@babel/plugin-syntax-dynamic-import",
-                    [
-                        "@babel/plugin-transform-runtime",
-                        {
-                            useESModules: true,
-                        },
-                    ],
-                ],
             }),
             //Main functions
             postcss({
-                minimize: true,
-                plugins: [autoprefixer()],
+                minimize: production,
+                plugins: [autoprefixer],
                 inject: false,
             }),
             postcssLit(),
@@ -86,7 +70,7 @@ export default [
                 targets: [{ src: "src/assets", dest: "dist" }],
             }),
             esbuild({
-                minify: production === true,
+                minify: production,
             }),
         ],
     },

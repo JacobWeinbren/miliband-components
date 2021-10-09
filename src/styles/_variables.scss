@@ -1,5 +1,6 @@
 @use "sass:math";
 @use "sass:color";
+@use "functions" as f;
 
 /*
 Colours
@@ -14,26 +15,24 @@ Colours
 
 //From https://coolors.co/
 $black: #0c0c0c;
-$purple: #5438dc;
-$cyan: #008990;
-$blue: #0967ea;
-$yellow: #f9be00;
-$green: #40c057;
+$purple: #963eff;
+$pink: #ff70a6;
+$blue: #3cf;
+$yellow: #fce354;
+$green: #1ee592;
 $brand: #f04c53;
-$orange: #ff7f45;
+$orange: #ff8f00;
 $white: #fff;
-$bone: #d7d0b8;
 
 $colors: (
     "black": $black,
     "purple": $purple,
-    "cyan": $cyan,
+    "pink": $pink,
     "blue": $blue,
     "yellow": $yellow,
     "green": $green,
     "brand": $brand,
     "orange": $orange,
-    "bone": $bone,
 );
 
 :root {
@@ -64,38 +63,19 @@ $colors: (
 }
 
 /*
-Spacing
-*/
-$space-unit: 1em;
-
-$spacing: (
-    // extra small
-    "xxxs": 0.25 * $space-unit,
-    "xxs": 0.5 * $space-unit,
-    "xs": 0.75 * $space-unit,
-    //small
-    "sm": 1 * $space-unit,
-    //medium
-    "md": 1.5 * $space-unit,
-    //large
-    "lg": 2 * $space-unit,
-    //extra large
-    "xl": 3 * $space-unit,
-    "xxl": 4 * $space-unit,
-    "xxxl": 5 * $space-unit,
-    "xxxxl": 6 * $space-unit,
-    "xxxxxxl": 7 * $space-unit
-);
-
-/*
 Breakpoints
 */
 $breakpoints: (
-    xs: 32rem,
-    sm: 48rem,
-    md: 64rem,
-    lg: 80rem,
-    xl: 90rem,
+    //32
+    "xs": space("xxxxl", 8),
+    //48
+    "sm": space("xxxxl", 12),
+    //64
+    "md": space("xxxxl", 16),
+    //80
+    "lg": space("xxxxl", 20),
+    //92
+    "xl": space("xxxxl", 23)
 );
 
 /* https://css-tricks.com/snippets/sass/mixin-manage-breakpoints/ */
@@ -109,14 +89,6 @@ $breakpoints: (
         @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
         + "Available breakpoints are: #{map-keys($breakpoints)}.";
     }
-}
-
-:root {
-    --space-unit: #{$space-unit};
-    @each $key, $space in $spacing {
-        --space-#{$key}: #{$space};
-    }
-    --component-padding: var(--space-xl);
 }
 
 /*

@@ -14,6 +14,9 @@ export class MiliButton extends LitElement {
     @property()
     icon = false;
 
+    @property()
+    class = "";
+
     getIcon() {
         if (this.icon) {
             return html`<ArrowRight />`;
@@ -21,10 +24,10 @@ export class MiliButton extends LitElement {
     }
 
     render() {
-        return html`<a role="button">
+        return html`<button class="${this.class}">
             <slot></slot>
             ${this.getIcon()}
-        </a>`;
+        </button>`;
     }
 }
 

@@ -1,3 +1,3 @@
-export * from "./components/mili-button";
-export * from "./components/mili-nav";
-export * from "./components/mili-nav-item";
+export * from "./components/mili-button.ts";
+export * from "./components/mili-nav.ts";
+export * from "./components/mili-nav-item.ts";

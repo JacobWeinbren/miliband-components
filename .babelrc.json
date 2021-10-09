@@ -1,0 +1,21 @@
+{
+    "presets": [
+        "@babel/typescript",
+        [
+            "@babel/preset-env",
+            {
+                "useBuiltIns": "usage",
+                "corejs": 3.8
+            }
+        ]
+    ],
+    "plugins": [
+        "@babel/plugin-syntax-dynamic-import",
+        [
+            "@babel/plugin-transform-runtime",
+            {
+                "useESModules": true
+            }
+        ]
+    ]
+}

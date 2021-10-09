@@ -1,0 +1,24 @@
+/*
+Spacing
+*/
+$space-unit: 1rem;
+
+$spacing: (
+    // extra small
+    "xs": 0.5,
+    //small
+    "sm": 1,
+    //medium
+    "md": 1.5,
+    //large
+    "lg": 2,
+    //extra large
+    "xl": 2.5,
+    "xxl": 3,
+    "xxxl": 3.5,
+    "xxxxl": 4
+);
+
+@function space($level, $multiply: 1) {
+    @return $multiply * map-get($spacing, $level) * $space-unit;
+}

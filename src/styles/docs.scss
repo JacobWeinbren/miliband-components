@@ -4,79 +4,10 @@
 }
 
 /* Sidebar */
-
 .sidebar-nav {
 	display: none;
 }
 
 .sidebar-toggle {
 	display: none;
-}
-
-/* Square */
-
-.square {
-	height: 500px;
-	border-radius: 10px;
-
-	.details {
-		padding: var(--space-xxxl);
-	}
-
-	img {
-		height: 100%;
-	}
-}
-
-.split {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	margin: 0 var(--space-lg);
-
-	.square {
-		flex-grow: 1;
-		flex-basis: 0;
-		min-width: 0;
-		background-size: cover;
-		background-position: center;
-
-		&:first-child {
-			margin-right: var(--space-lg);
-		}
-
-		.title {
-			font-weight: 700;
-			font-size: var(--text-xxl);
-			margin: 0 0 var(--space-xxxs) 0;
-		}
-
-		.subtitle {
-			font-size: var(--text-xl);
-			margin: 0 0 var(--space-xxs) 0;
-		}
-
-		.detail {
-			font-size: var(--text-xs);
-			margin: 0 0 var(--space-xxs) 0;
-		}
-	}
-}
-
-/* Content */
-
-.content {
-	position: relative;
-	margin: 0 auto;
-	max-width: 1280px;
-}
-
-/* Tables */
-.markdown-section table tr td,
-.markdown-section table th {
-	border-right: 1px solid var(--col-black-50);
-}
-
-.markdown-section table {
-	border: 1px solid var(--col-black-50);
 }

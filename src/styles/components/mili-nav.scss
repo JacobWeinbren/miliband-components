@@ -1,23 +1,25 @@
+@use '../functions' as f;
+
 nav {
+    max-width: f.space("xxxxl", 23);
+    margin: auto 0;
+    padding-top: f.space("sm");
     display: flex;
     align-items: center;
-    height: var(--space-xxxl);
-    padding: var(--space-md) 0;
-    margin: 0 var(--space-md);
     background: var(--inverse);
     box-sizing: border-box;
-}
 
-.left {
-    display: flex;
-    align-items: center;
-    margin-top: auto;
+    .left,
+    .right,
+    .logo {
+        display: flex;
+        align-items: center;
+        margin-top: auto;
+    }
 }
 
 a {
-    display: flex;
-    margin-right: var(--space-md);
     img {
-        height: var(--space-md);
+        height: f.space("sm", 2);
     }
 }

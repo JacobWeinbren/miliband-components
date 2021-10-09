@@ -5,13 +5,9 @@
 /* https://medium.com/codyhouse/create-your-design-system-part-1-typography-7c630d9092bd */
 /* https://codyhouse.co/ds/docs/framework/typography */
 $font: "Poppins", Helvetica, Arial, sans-serif;
-$base-size: 1.12em;
+$base-size: 1em;
 $base-weight: 400;
 $heading-weight: 600;
-$heading-line-height: var(--space-lg);
-$body-line-height: var(--space-lg);
-$letter-spacing: 0;
-$word-spacing: 0;
 
 :root {
     --font: #{$font};
@@ -19,19 +15,16 @@ $word-spacing: 0;
     --text-base-weight: #{$base-weight};
     --text-heading-weight: #{$heading-weight};
 
-    --body-line-height: #{$body-line-height};
-    --heading-line-height: #{$heading-line-height};
-    --word-spacing: #{$word-spacing};
-    --letter-spacing: #{$letter-spacing};
-
-    --text-xxs: #{$base-size * 0.65};
     --text-xs: #{$base-size * 0.75};
     --text-sm: #{$base-size};
     --text-md: #{$base-size * 1.5};
     --text-lg: #{$base-size * 1.75};
     --text-xl: #{$base-size * 2};
     --text-xxl: #{$base-size * 2.5};
-    --text-xxxl: #{$base-size * 3};
+
+    --line-sm: calc(1ex / 0.42);
+    --line-md: calc(1ex / 0.48);
+    --line-lg: calc(1ex / 0.52);
 }
 
 /* Applies Text Size */
@@ -41,31 +34,30 @@ body {
     font-family: var(--font);
     color: var(--text);
     background: var(--inverse);
-    word-spacing: var(--word-spacing);
 }
 
 h1 {
     font-size: var(--text-xxl);
-    line-height: calc(1ex / 0.52);
-    margin-bottom: calc(1ex / 0.52);
+    line-height: var(--line-lg);
+    margin-bottom: var(--line-lg);
 }
 
 h2 {
     font-size: var(--text-xl);
-    line-height: calc(1ex / 0.52);
-    margin-bottom: calc(1ex / 0.52);
+    line-height: var(--line-lg);
+    margin-bottom: var(--line-lg);
 }
 
 h3 {
     font-size: var(--text-lg);
-    line-height: calc(1ex / 0.48);
-    margin-bottom: calc(1ex / 0.48);
+    line-height: var(--line-md);
+    margin-bottom: var(--line-md);
 }
 
 h4 {
     font-size: var(--text-md);
-    line-height: calc(1ex / 0.48);
-    margin-bottom: calc(1ex / 0.48);
+    line-height: var(--line-md);
+    margin-bottom: var(--line-md);
 }
 
 p,
@@ -75,8 +67,8 @@ i,
 b {
     display: block;
     font-size: var(--text-sm);
-    line-height: calc(1ex / 0.42);
-    margin-bottom: calc(1ex / 0.42);
+    line-height: var(--line-sm);
+    margin-bottom: var(--line-sm);
 }
 
 p {
@@ -88,8 +80,8 @@ h5,
 small,
 h6 {
     font-size: var(--text-xs);
-    line-height: calc(1ex / 0.42);
-    margin-bottom: calc(1ex / 0.42);
+    line-height: var(--line-sm);
+    margin-bottom: var(--line-sm);
 }
 
 strong f {
@@ -114,18 +106,6 @@ h6 {
             text-decoration-color: var(--col-brand-900);
         }
     }
-}
-
-kbd {
-    background: var(--mono-tint3);
-    border-radius: var(--border-radius-m);
-    margin: 0 var(--space-xs);
-    min-width: var(--space-md);
-    padding: var(--space-sm);
-}
-
-.notice {
-    padding: var(--space-md) var(--space-md) var(--space-md) var(--space-xxl);
 }
 
 @supports (font-size-adjust: 1) {
